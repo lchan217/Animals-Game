@@ -1,6 +1,13 @@
 const animals = [
-  {name: "panda 1", status: "endangered", url: , gender: "female", age: 32 },
-  {name: "panda 2", status: "endangered", url: , gender: "male" , age: 32},
-  {name: "monkey 1", status: "endangered", url: , gender: "female", age: 22},
-  {name: "monkey 2", status: "endangered", url: , gender: "male", age: 22}
+  {name: "panda 1", status: "endangered", url: "https://images.unsplash.com/photo-1527118732049-c88155f2107c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" , gender: "female", age: 32 },
+  {name: "panda 2", status: "endangered", url: "https://images.unsplash.com/photo-1527118732049-c88155f2107c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "male" , age: 32},
+  {name: "panda 3", status: "dead", url: "https://images.unsplash.com/photo-1527118732049-c88155f2107c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "female" , age: 1},
+  {name: "panda 4", status: "dead", url: "https://images.unsplash.com/photo-1527118732049-c88155f2107c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "male" , age: 3},
+  {name: "panda 5", status: "dead", url: "https://images.unsplash.com/photo-1527118732049-c88155f2107c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "male" , age: 5},
+
+  {name: "monkey 1", status: "endangered", url: "https://images.unsplash.com/photo-1548822871-41e3a4d34fee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "female", age: 22},
+  {name: "monkey 2", status: "endangered", url: "https://images.unsplash.com/photo-1548822871-41e3a4d34fee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "male", age: 22}
+  {name: "monkey 3", status: "dead", url:  "https://images.unsplash.com/photo-1548822871-41e3a4d34fee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "female", age: 2}
+  {name: "monkey 4", status: "dead", url:  "https://images.unsplash.com/photo-1548822871-41e3a4d34fee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "female", age: 4}
+  {name: "monkey 5", status: "dead", url:  "https://images.unsplash.com/photo-1548822871-41e3a4d34fee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", gender: "male", age: 4}
 ]
