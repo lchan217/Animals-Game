@@ -10,6 +10,10 @@ class AnimalContainer extends Component {
     )
   }
 }
+
+// app -> animal countainer --> animalCard --> animalList, breedingList, endangeredList, wildList
+
+
 //
 // const mapStateToProps = state => {
 //   return {
