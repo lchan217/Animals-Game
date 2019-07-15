@@ -1,0 +1,6 @@
+const animals = [
+  {name: "panda 1", status: "endangered", url: , gender: "female", age: 32 },
+  {name: "panda 2", status: "endangered", url: , gender: "male" , age: 32},
+  {name: "monkey 1", status: "endangered", url: , gender: "female", age: 22},
+  {name: "monkey 2", status: "endangered", url: , gender: "male", age: 22}
+]
