@@ -8,6 +8,13 @@ function App() {
     <div>
       <AnimalContainer />
       <UserContainer />
+    //routes
+      //instructions
+      //...homeuser form 
+      //breeding index
+      //endangered index
+      //wild index
+      //all animals (with new animal form)
     </div>
   )
 }

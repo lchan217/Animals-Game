@@ -1,0 +1,1 @@
+//stateless component 4
