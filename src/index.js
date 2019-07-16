@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { createStore } from 'redux'
+import combineReducers from './reducers/index'
+
+const store = createStore(combineReducers)
+
+
 ReactDOM.render(
   <App />,
   document.getElementById('root')

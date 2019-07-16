@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
     <div className="navbar">
-      <li><Link to="/" exact>Home</Link></li>
+      <li><Link to="/" exact>Home(Delete later because you only need leg once)</Link></li>
       <li><Link to="/instructions" exact>Instructions</Link></li>
       <li><Link to="/users" exact>User List (Delete later)</Link></li>
       <li><Link to="/animals" exact>All Animals</Link></li>
