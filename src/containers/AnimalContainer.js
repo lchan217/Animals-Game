@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import {fetchAnimals} from '../actions/animalActions.js'
 
 class AnimalContainer extends Component {
+    componentDidMount() {
+      this.props.fetchAnimals()
+     }
 
   render() {
     return (
@@ -20,14 +25,11 @@ class AnimalContainer extends Component {
 //     };
 // }
 //
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addRestaurant: (restaurant) => dispatch(addRestaurant(restaurant)),
-//     delete: (id) => dispatch(deleteRestaurant(id)),
-//     update: (restaurant) => dispatch(updateRestaurant(restaurant))
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchAnimals: () => dispatch(fetchAnimals()),
+  }
+}
 
 
-export default AnimalContainer
-// export default connect(mapStateToProps, mapDispatchToProps)(RestaurantsContainer)
+export default connect(null, mapDispatchToProps)(AnimalContainer)
