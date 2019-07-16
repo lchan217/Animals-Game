@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
     <div className="navbar">
-      test-nav bar
+      <li><Link to="/" exact>Home</Link></li>
+      <li><Link to="/instructions" exact>Instructions</Link></li>
+      <li><Link to="/users" exact>User List (Delete later)</Link></li>
+      <li><Link to="/animals" exact>All Animals</Link></li>
+      <li><Link to="/breeding" exact>Breeding Animals</Link></li>
+      <li><Link to="/endangered" exact>Endangered Animals</Link></li>
+      <li><Link to="/wild" exact>Wild Animals</Link></li>
     </div>
   );
 };

@@ -1,20 +1,14 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import UserForm from '../components/welcome/UserForm';
-import UserList from '../components/welcome/UserList';
-import Instructions from '../components/welcome/Instructions';
+
 
 class UserContainer extends Component {
 
   render() {
     return (
-      <Router>
         <div>
-          <Route path="/" exact component={UserForm} />
-          <Route path="/userlist" exact component={UserList} />
-          <Route path="/instructions" exact component={Instructions} />
+          Users container
         </div>
-      </Router>
     )
   }
 }
