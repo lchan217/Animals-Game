@@ -5,7 +5,7 @@ import React from 'react';
 const WildList = () => {
   return (
     <div className="navbar">
-      WildList
+      WildListComponent
     </div>
   );
 };

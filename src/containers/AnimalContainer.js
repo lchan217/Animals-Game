@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {fetchAnimals} from '../actions/animalActions.js'
+import AnimalCard from '../components/animals/AnimalCard.js'
 
 class AnimalContainer extends Component {
     componentDidMount() {
@@ -10,6 +11,7 @@ class AnimalContainer extends Component {
   render() {
     return (
         <div>
+          <AnimalCard animals={this.props.animals}/>
         </div>
     )
   }
@@ -17,14 +19,12 @@ class AnimalContainer extends Component {
 
 // app -> animal countainer --> animalCard --> animalList, breedingList, endangeredList, wildList
 
+const mapStateToProps = state => {
+  return {
+      animals: state.animals
+    };
+}
 
-//
-// const mapStateToProps = state => {
-//   return {
-//       restaurants: state.restaurants
-//     };
-// }
-//
 const mapDispatchToProps = dispatch => {
   return {
     fetchAnimals: () => dispatch(fetchAnimals()),
@@ -32,4 +32,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(AnimalContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(AnimalContainer)

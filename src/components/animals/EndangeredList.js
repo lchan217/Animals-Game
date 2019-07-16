@@ -5,7 +5,7 @@ import React from 'react';
 const EndangeredList = () => {
   return (
     <div className="navbar">
-      EndangeredList
+      EndangeredListComponent
     </div>
   );
 };

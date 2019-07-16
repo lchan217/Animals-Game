@@ -4,9 +4,7 @@ export default function animalsReducer(state = [], action) {
     return {...state}
 
     case 'FETCH_ANIMALS':
-    debugger 
-    return {...state, pictures: action.payload}
-
+    return {...state, animals: action.animals}
 
     default:
       return state;

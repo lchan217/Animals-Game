@@ -4,7 +4,7 @@ import React from 'react';
 const BreedingList = () => {
   return (
     <div className="navbar">
-      BreedingList
+      BreedingListComponent
     </div>
   );
 };

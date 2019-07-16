@@ -4,7 +4,7 @@ import React from 'react';
 const AnimalList = () => {
   return (
     <div className="navbar">
-      AnimalList
+      AnimalListComponent
     </div>
   );
 };
