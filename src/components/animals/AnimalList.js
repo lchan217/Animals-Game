@@ -1,12 +1,15 @@
-//stateless component 4
-import React from 'react';
 
-const AnimalList = () => {
-  return (
-    <div className="navbar">
-      AnimalListComponent
-    </div>
-  );
-};
+import React, { Component } from 'react';
 
-export default AnimalList;
+ export default class AnimalList extends Component {
+
+
+
+     render() {
+        return (
+            <div>
+              {this.props.showAnimalList}
+            </div>
+        )
+    }
+}

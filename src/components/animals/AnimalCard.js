@@ -7,14 +7,10 @@ import EndangeredList from './EndangeredList'
 import WildList from './WildList'
 
  export default class AnimalCard extends Component {
-
      render() {
         return (
             <div>
-              <AnimalList animals={this.props.animals}/>
-              <BreedingList />
-              <EndangeredList />
-              <WildList />
+              AnimalCard
             </div>
         )
     }

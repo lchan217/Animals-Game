@@ -17,13 +17,13 @@ function App() {
     <Router>
       <div>
         <NavBar />
-        <Route path="/" exact component={UserForm} />
-        <Route path="/users" exact component={UserList} />
-        <Route path="/instructions" exact component={Instructions} />
-        <Route path="/animals" exact component={AnimalList} />
-        <Route path="/breeding" exact component={BreedingList} />
-        <Route path="/endangered" exact component={EndangeredList} />
-        <Route path="/wild" exact component={WildList} />
+        <Route path='/' exact component={UserForm} />
+        <Route path='/users' exact component={UserList} />
+        <Route path='/instructions' exact component={Instructions} />
+        <Route path='/animals' exact component={AnimalList} />
+        <Route path='/breeding' exact component={BreedingList} />
+        <Route path='/endangered' exact component={EndangeredList} />
+        <Route path='/wild' exact component={WildList} />
         <AnimalContainer />
         <UserContainer />
       </div>
