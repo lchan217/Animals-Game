@@ -15,7 +15,7 @@ class AnimalContainer extends Component {
        if (this.props.animals.length > 0  && this.props.filter === "breeding"){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
          return breeding.map((animal, idx) =>
-         <li key={idx}>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age} <button onClick={() => this.props.deadToBreeding(animal.id)}> Breed </button><button onClick={() => this.props.breedingToWild(animal.id)}>Release</button></li>)
+         <li key={idx}>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age} <button> Nurse To Health (need to activate) </button><button onClick={() => this.props.breedingToWild(animal.id)}>Release</button></li>)
        }
      }
 

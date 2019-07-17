@@ -10,17 +10,25 @@ export default function animalsReducer(state = [], action) {
     // return newState
 
     case 'BREEDING_TO_WILD':
-    return state
+    const breedingToWild = [...state]
+    const breedingToWildResult = breedingToWild.map(animal => {
+      if(animal.id === action.id){
+        animal.status = "wild"
+      }
+      return animal
+    })
+    debugger
+    return breedingToWildResult
 
     case 'ENDANGERED_TO_BREEDING':
-    const eTB = [...state]
-    const eTBResult = eTB.map(animal => {
+    const endangeredToBreeding = [...state]
+    const endangeredToBreedingResult = endangeredToBreeding.map(animal => {
       if(animal.id === action.id){
         animal.status = "breeding"
       }
       return animal
     })
-    return eTBResult
+    return endangeredToBreedingResult
 
     default:
       return state;
