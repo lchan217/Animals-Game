@@ -13,16 +13,16 @@ class AnimalContainer extends Component {
 
      showAnimalList(){
        if (this.props.animals.length > 0 ){
-         return this.props.animals.map(animal =>
-             <li>AnimalList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
+         return this.props.animals.map((animal, idx) =>
+             <li key={idx}>AnimalList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
        }
      }
 
      showBreedingList(){
        if (this.props.animals.length > 0 ){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
-         return breeding.map(animal =>
-         <li>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
+         return breeding.map((animal, idx) =>
+         <li key={idx}>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
        }
      }
 
