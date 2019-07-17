@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const UserList = () => {
-  return (
-    <div className="userlist">
-      User List 
-    </div>
-  );
-};
+ export default class UserList extends Component {
 
-export default UserList;
+     render() {
+        return (
+            <div className="userList">
+              {this.props.showUsers}
+            </div>
+        )
+    }
+}
