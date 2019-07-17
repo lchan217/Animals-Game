@@ -11,13 +11,6 @@ class AnimalContainer extends Component {
       this.props.fetchAnimals()
      }
 // =================================================showlists=================================================================
-     showAnimalList(){
-       if (this.props.animals.length > 0  && this.props.filter === "all"){
-         return this.props.animals.map((animal, idx) =>
-             <li key={idx}>AnimalList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
-       }
-     }
-
      showBreedingList(){
        if (this.props.animals.length > 0  && this.props.filter === "breeding"){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
@@ -32,6 +25,11 @@ class AnimalContainer extends Component {
          return endangered.map((animal, idx) =>
          <li key={idx}>Endangered - {animal.name} - {animal.status} - {animal.gender} - {animal.age} <button onClick={() => this.props.endangeredToBreeding(animal.id)}>Capture</button></li>)
        }
+       if (this.props.animals.length > 0 && this.props.filter === "all"){
+         let endangered =  this.props.animals.filter(animal => animal.status === "endangered")
+         return endangered.map((animal, idx) =>
+         <li key={idx}>Endangered - {animal.name} - {animal.status} - {animal.gender} - {animal.age} <button onClick={() => this.props.endangeredToBreeding(animal.id)}>Capture</button></li>)
+       }
      }
 
      showWildList(){
@@ -41,12 +39,18 @@ class AnimalContainer extends Component {
          <li key={idx}>Wild - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
        }
      }
+
+     showAll(){
+       if (this.props.animals.length > 0  && this.props.filter === "all"){
+         return <EndangeredList showEndangeredList={this.showEndangeredList()}/>
+       }
+     }
 // ==================================================onclicks=================================================================
 
   render() {
     return (
         <div>
-          <AnimalList animals={this.props.animals} showAnimalList={this.showAnimalList()}/>
+          <AnimalList animals={this.props.animals} showAll={this.showAll()}/>
           <BreedingList animals={this.props.animals} showBreedingList={this.showBreedingList()}/>
           <EndangeredList animals={this.props.animals} showEndangeredList={this.showEndangeredList()}/>
           <WildList animals={this.props.animals} showWildList={this.showWildList()}/>
