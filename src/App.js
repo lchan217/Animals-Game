@@ -4,12 +4,7 @@ import UserContainer from './containers/UserContainer.js'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import UserForm from './components/welcome/UserForm';
-import UserList from './components/welcome/UserList';
 import Instructions from './components/welcome/Instructions';
-import AnimalList from './components/animals/AnimalList';
-import BreedingList from './components/animals/BreedingList';
-import EndangeredList from './components/animals/EndangeredList';
-import WildList from './components/animals/WildList';
 import NavBar from './components/NavBar';
 
 function App() {
