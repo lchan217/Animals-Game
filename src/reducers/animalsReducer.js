@@ -17,7 +17,6 @@ export default function animalsReducer(state = [], action) {
       }
       return animal
     })
-    debugger
     return breedingToWildResult
 
     case 'ENDANGERED_TO_BREEDING':
@@ -29,6 +28,22 @@ export default function animalsReducer(state = [], action) {
       return animal
     })
     return endangeredToBreedingResult
+
+    case 'NURSE':
+    //increase health until 5
+    const currentHealth = [...state]
+    const increasedHealth = currentHealth.map(animal => {
+      if(animal.id === action.id){
+        animal.health++
+      }
+      return animal
+    })
+    return increasedHealth
+
+//     export const addQuote = (quote) =>{
+//   return {type: "ADD_QUOTE",
+//   quote: Object.assign({}, quote, {votes: 0})}
+// }
 
     default:
       return state;

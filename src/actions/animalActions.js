@@ -16,3 +16,8 @@ export const endangeredToBreeding = (id) =>{
   return {type: "ENDANGERED_TO_BREEDING",
   id}
 }
+
+export const nurse = (id) =>{
+  return {type: "NURSE",
+  id}
+}
