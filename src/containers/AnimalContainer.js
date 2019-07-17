@@ -12,7 +12,7 @@ class AnimalContainer extends Component {
      }
 // =================================================showlists=================================================================
      showAnimalList(){
-       if (this.props.animals.length > 0 ){
+       if (this.props.animals.length > 0  && this.props.filter === "all"){
          return this.props.animals.map((animal, idx) =>
              <li key={idx}>AnimalList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
        }

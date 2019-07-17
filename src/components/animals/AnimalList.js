@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 
 const AnimalList = props => <div>{props.showAnimalList}</div>;
 
