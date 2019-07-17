@@ -1,15 +1,16 @@
 
 import React, { Component } from 'react';
 
- export default class AnimalList extends Component {
+const AnimalList = props => <div>{props.showAnimalList}</div>;
 
+export default AnimalList
 
-
-     render() {
-        return (
-            <div className="animalList">
-              {this.props.showAnimalList}
-            </div>
-        )
-    }
-}
+//  export default class AnimalList extends Component {
+//      render() {
+//         return (
+//             <div className="animalList">
+//               {this.props.showAnimalList}
+//             </div>
+//         )
+//     }
+// }
