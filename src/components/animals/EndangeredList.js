@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
- export default class Endangered extends Component {
+ export default class EndangeredList extends Component {
      render() {
         return (
             <div className="endangeredList">

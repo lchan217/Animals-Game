@@ -34,13 +34,21 @@ class AnimalContainer extends Component {
        }
      }
 
+     showWildList(){
+       if (this.props.animals.length > 0 ){
+         let wild =  this.props.animals.filter(animal => animal.status === "wild")
+         return wild.map((animal, idx) =>
+         <li key={idx}>Wild - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
+       }
+     }
+
   render() {
     return (
         <div>
           <AnimalList animals={this.props.animals} showAnimalList={this.showAnimalList()}/>
           <BreedingList animals={this.props.animals} showBreedingList={this.showBreedingList()}/>
           <EndangeredList animals={this.props.animals} showEndangeredList={this.showEndangeredList()}/>
-          <WildList animals={this.props.animals}/>
+          <WildList animals={this.props.animals} showWildList={this.showWildList()}/>
         </div>
     )
   }

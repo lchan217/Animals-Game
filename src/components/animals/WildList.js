@@ -1,13 +1,12 @@
-//stateless component 3
-//stateless component 4
-import React from 'react';
 
-const WildList = () => {
-  return (
-    <div className="navbar">
-      WildListComponent
-    </div>
-  );
-};
+import React, { Component } from 'react';
 
-export default WildList;
+ export default class WildList extends Component {
+     render() {
+        return (
+            <div className="wildList">
+              {this.props.showWildList}
+            </div>
+        )
+    }
+}
