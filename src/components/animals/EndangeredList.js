@@ -1,13 +1,12 @@
-//stateless component 2
-//stateless component 4
-import React from 'react';
 
-const EndangeredList = () => {
-  return (
-    <div className="navbar">
-      EndangeredListComponent
-    </div>
-  );
-};
+import React, { Component } from 'react';
 
-export default EndangeredList;
+ export default class Endangered extends Component {
+     render() {
+        return (
+            <div className="endangeredList">
+              {this.props.showEndangeredList}
+            </div>
+        )
+    }
+}
