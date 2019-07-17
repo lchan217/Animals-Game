@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import {fetchAnimals} from '../actions/animalActions.js'
+import {fetchAnimals, deadToBreeding, breedingToWild, endangeredToBreeding, wildToDead} from '../actions/animalActions.js'
 import AnimalList from '../components/animals/AnimalList.js'
 import BreedingList from '../components/animals/BreedingList.js'
 import EndangeredList from '../components/animals/EndangeredList.js'
@@ -10,7 +10,7 @@ class AnimalContainer extends Component {
     componentDidMount() {
       this.props.fetchAnimals()
      }
-
+// =================================================showlists=================================================================
      showAnimalList(){
        if (this.props.animals.length > 0 ){
          return this.props.animals.map((animal, idx) =>
@@ -22,7 +22,7 @@ class AnimalContainer extends Component {
        if (this.props.animals.length > 0 ){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
          return breeding.map((animal, idx) =>
-         <li key={idx}>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
+         <li key={idx}>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age} <button onClick={() => deadToBreeding(animal.id)}> Breed </button><button onClick={() => breedingToWild(animal.id)}>Release</button></li>)
        }
      }
 
@@ -30,7 +30,7 @@ class AnimalContainer extends Component {
        if (this.props.animals.length > 0 ){
          let endangered =  this.props.animals.filter(animal => animal.status === "endangered")
          return endangered.map((animal, idx) =>
-         <li key={idx}>Endangered - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
+         <li key={idx}>Endangered - {animal.name} - {animal.status} - {animal.gender} - {animal.age} <button onClick={() => endangeredToBreeding(animal.id)}>Capture</button></li>)
        }
      }
 
@@ -41,6 +41,7 @@ class AnimalContainer extends Component {
          <li key={idx}>Wild - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
        }
      }
+// ==================================================onclicks=================================================================
 
   render() {
     return (
@@ -54,8 +55,6 @@ class AnimalContainer extends Component {
   }
 }
 
-// app -> animal countainer --> animalCard --> animalList, breedingList, endangeredList, wildList
-
 const mapStateToProps = state => {
   return {
       animals: state.animals
@@ -65,6 +64,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchAnimals: () => dispatch(fetchAnimals()),
+    deadToBreeding: (id) => dispatch(deadToBreeding(id)),
+    breedingToWild: (id) => dispatch(breedingToWild(id)),
+    endangeredToBreeding: (id) => dispatch(endangeredToBreeding(id)),
+    wildToDead: (id) => dispatch(wildToDead(id))
   }
 }
 
