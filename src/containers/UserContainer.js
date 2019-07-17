@@ -17,7 +17,7 @@ class UserContainer extends Component {
   render() {
     return (
         <div>
-          <UserList users={this.props.users} showUsers={this.showUsers()}/>
+          <UserList users={this.props.users} showUsers={this.showUsers()} />
         </div>
     )
   }

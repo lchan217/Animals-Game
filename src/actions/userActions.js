@@ -6,3 +6,8 @@ export function fetchUsers() {
       .then(users => dispatch({ type: 'FETCH_USERS', payload: users}));
   };
 }
+
+export const addUser = (user) =>{
+  return {type: "ADD_USER",
+  user}
+}
