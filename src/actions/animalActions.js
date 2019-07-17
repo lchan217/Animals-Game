@@ -16,8 +16,3 @@ export const endangeredToBreeding = (id) =>{
   return {type: "ENDANGERED_TO_BREEDING",
   id}
 }
-
-export const wildToDead = (id) =>{
-  return {type: "WILD_TO_DEAD",
-  id}
-}

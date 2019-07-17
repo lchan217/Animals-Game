@@ -22,9 +22,6 @@ export default function animalsReducer(state = [], action) {
     })
     return eTBResult
 
-    case 'WILD_TO_DEAD':
-    return state
-
     default:
       return state;
   }

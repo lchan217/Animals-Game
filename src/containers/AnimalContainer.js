@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import {fetchAnimals, deadToBreeding, breedingToWild, endangeredToBreeding, wildToDead} from '../actions/animalActions.js'
+import {fetchAnimals, breedingToWild, endangeredToBreeding} from '../actions/animalActions.js'
 import AnimalList from '../components/animals/AnimalList.js'
 import BreedingList from '../components/animals/BreedingList.js'
 import EndangeredList from '../components/animals/EndangeredList.js'
@@ -70,7 +70,6 @@ const mapDispatchToProps = dispatch => {
     fetchAnimals: () => dispatch(fetchAnimals()),
     breedingToWild: (id) => dispatch(breedingToWild(id)),
     endangeredToBreeding: (id) => dispatch(endangeredToBreeding(id)),
-    wildToDead: (id) => dispatch(wildToDead(id))
   }
 }
 
