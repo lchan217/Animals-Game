@@ -68,7 +68,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchAnimals: () => dispatch(fetchAnimals()),
-    deadToBreeding: (id) => dispatch(deadToBreeding(id)),
     breedingToWild: (id) => dispatch(breedingToWild(id)),
     endangeredToBreeding: (id) => dispatch(endangeredToBreeding(id)),
     wildToDead: (id) => dispatch(wildToDead(id))

@@ -7,17 +7,12 @@ export function fetchAnimals() {
   };
 }
 
-export const deadToBreeding = (id) =>{
-  return {type: "DEAD_TO_BREEDING",
-  id}
-}
-
 export const breedingToWild = (id) =>{
   return {type: "BREEDING_TO_WILD",
   id}
 }
 
-export const endangeredToBreeding = (id) =>{ 
+export const endangeredToBreeding = (id) =>{
   return {type: "ENDANGERED_TO_BREEDING",
   id}
 }
