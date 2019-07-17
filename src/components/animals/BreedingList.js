@@ -1,12 +1,12 @@
-//stateless component 4
-import React from 'react';
 
-const BreedingList = () => {
-  return (
-    <div className="navbar">
-      BreedingListComponent
-    </div>
-  );
-};
+import React, { Component } from 'react';
 
-export default BreedingList;
+ export default class BreedingList extends Component {
+     render() {
+        return (
+            <div className="breedingList">
+              {this.props.showBreedingList}
+            </div>
+        )
+    }
+}

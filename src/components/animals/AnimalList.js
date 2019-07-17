@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 
      render() {
         return (
-            <div>
+            <div className="animalList">
               {this.props.showAnimalList}
             </div>
         )

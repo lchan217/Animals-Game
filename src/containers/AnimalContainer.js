@@ -14,7 +14,15 @@ class AnimalContainer extends Component {
      showAnimalList(){
        if (this.props.animals.length > 0 ){
          return this.props.animals.map(animal =>
-           <li>{animal.name}</li>)
+             <li>AnimalList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
+       }
+     }
+
+     showBreedingList(){
+       if (this.props.animals.length > 0 ){
+         let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
+         return breeding.map(animal =>
+         <li>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
        }
      }
 
@@ -22,7 +30,7 @@ class AnimalContainer extends Component {
     return (
         <div>
           <AnimalList animals={this.props.animals} showAnimalList={this.showAnimalList()}/>
-          <BreedingList animals={this.props.animals}/>
+          <BreedingList animals={this.props.animals} showBreedingList={this.showBreedingList()}/>
           <EndangeredList animals={this.props.animals}/>
           <WildList animals={this.props.animals}/>
         </div>
