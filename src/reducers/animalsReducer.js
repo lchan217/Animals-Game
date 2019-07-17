@@ -4,8 +4,18 @@ export default function animalsReducer(state = [], action) {
     return {...state}
 
     case 'FETCH_ANIMALS':
-    // return {...state, action}
-    state = action.payload
+    return action.payload
+
+    case 'DEAD_TO_BREEDING':
+    return state
+
+    case 'BREEDING_TO_WILD':
+    return state
+
+    case 'ENDANGERED_TO_BREEDING':
+    return state
+
+    case 'WILD_TO_DEAD':
     return state
 
     default:
