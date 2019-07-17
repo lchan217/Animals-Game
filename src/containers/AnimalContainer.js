@@ -19,7 +19,7 @@ class AnimalContainer extends Component {
      }
 
      showBreedingList(){
-       if (this.props.animals.length > 0 ){
+       if (this.props.animals.length > 0  && this.props.filter === "breeding"){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
          return breeding.map((animal, idx) =>
          <li key={idx}>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age} <button onClick={() => this.props.deadToBreeding(animal.id)}> Breed </button><button onClick={() => this.props.breedingToWild(animal.id)}>Release</button></li>)
@@ -27,7 +27,7 @@ class AnimalContainer extends Component {
      }
 
      showEndangeredList(){
-       if (this.props.animals.length > 0 ){
+       if (this.props.animals.length > 0 && this.props.filter === "endangered"){
          let endangered =  this.props.animals.filter(animal => animal.status === "endangered")
          return endangered.map((animal, idx) =>
          <li key={idx}>Endangered - {animal.name} - {animal.status} - {animal.gender} - {animal.age} <button onClick={() => this.props.endangeredToBreeding(animal.id)}>Capture</button></li>)
@@ -35,7 +35,7 @@ class AnimalContainer extends Component {
      }
 
      showWildList(){
-       if (this.props.animals.length > 0 ){
+       if (this.props.animals.length > 0  && this.props.filter === "wild"){
          let wild =  this.props.animals.filter(animal => animal.status === "wild")
          return wild.map((animal, idx) =>
          <li key={idx}>Wild - {animal.name} - {animal.status} - {animal.gender} - {animal.age}</li>)
