@@ -30,11 +30,13 @@ export default function animalsReducer(state = [], action) {
     return endangeredToBreedingResult
 
     case 'NURSE':
-    //increase health until 5
     const currentHealth = [...state]
     const increasedHealth = currentHealth.map(animal => {
       if(animal.id === action.id){
-        animal.health++
+        if(animal.health < 5){
+        animal.health++} else {
+          alert("Ready to be released back into the wild!")
+        }
       }
       return animal
     })
