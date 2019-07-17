@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import {fetchUsers} from '../actions/userActions.js'
 
 class UserContainer extends Component {
+  componentDidMount() {
+    this.props.fetchUsers()
+   }
 
   render() {
     return (
@@ -16,14 +21,10 @@ class UserContainer extends Component {
 //     };
 // }
 //
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addRestaurant: (restaurant) => dispatch(addRestaurant(restaurant)),
-//     delete: (id) => dispatch(deleteRestaurant(id)),
-//     update: (restaurant) => dispatch(updateRestaurant(restaurant))
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchUsers: () => dispatch(fetchUsers()),
+  }
+}
 
-
-export default UserContainer
-// export default connect(mapStateToProps, mapDispatchToProps)(RestaurantsContainer)
+export default connect(null, mapDispatchToProps)(UserContainer)

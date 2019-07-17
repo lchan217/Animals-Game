@@ -20,6 +20,6 @@ export default function animalsReducer(state = [], action) {
     return state
 
     default:
-      return state;
+    return state;
   }
 }
