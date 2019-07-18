@@ -11,42 +11,31 @@ class AnimalContainer extends Component {
      showBreedingList(){
        if (this.props.animals.length > 0  && this.props.filter === "breeding"){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
-         return breeding.map((animal, idx) =>
-         <li key={idx}>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}  - {animal.health}
-           <button onClick={() => this.props.nurse(animal.id)}> Nurse </button>
-           <button onClick={() => this.props.breedingToWild(animal.id)}>Release</button></li>)
+         return <AnimalCard breeding={breeding}/>
        }
        if (this.props.animals.length > 0 && this.props.filter === "all"){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
-         return breeding.map((animal, idx) =>
-         <li key={idx}>BreedingList - {animal.name} - {animal.status} - {animal.gender} - {animal.age}  - {animal.health}
-           <button onClick={() => this.props.nurse(animal.id)}> Nurse </button>
-           <button onClick={() => this.props.breedingToWild(animal.id)}>Release</button></li>)}
+         return <AnimalCard breeding={breeding}/>
+        }
      }
 
      showEndangeredList(){
        if (this.props.animals.length > 0 && this.props.filter === "endangered"){
          let endangered = this.props.animals.filter(animal => animal.status === "endangered")
-         return endangered.map((animal, idx) =>
-         <li key={idx}>Endangered - {animal.name} - {animal.status} - {animal.gender} - {animal.age} - {animal.health} <button onClick={() => this.props.endangeredToBreeding(animal.id)}>Capture</button></li>)
-       }
+         return <AnimalCard endangered={endangered} /> }
        if (this.props.animals.length > 0 && this.props.filter === "all"){
          let endangered =  this.props.animals.filter(animal => animal.status === "endangered")
-         return endangered.map((animal, idx) =>
-         <li key={idx}>Endangered - {animal.name} - {animal.status} - {animal.gender} - {animal.age}  - {animal.health} <button onClick={() => this.props.endangeredToBreeding(animal.id)}>Capture</button></li>)
-       }
+         return <AnimalCard endangered={endangered} /> }
      }
 
      showWildList(){
        if (this.props.animals.length > 0  && this.props.filter === "wild"){
          let wild =  this.props.animals.filter(animal => animal.status === "wild")
-         return wild.map((animal, idx) =>
-         <li key={idx}>Wild - {animal.name} - {animal.status} - {animal.gender} - {animal.age}  - {animal.health}</li>)
-       }
+         return <AnimalCard wild={wild} />
+        }
        if (this.props.animals.length > 0  && this.props.filter === "all"){
          let wild =  this.props.animals.filter(animal => animal.status === "wild")
-         return wild.map((animal, idx) =>
-         <li key={idx}>Wild - {animal.name} - {animal.status} - {animal.gender} - {animal.age}  - {animal.health}</li>)
+         return <AnimalCard wild={wild} />
        }
      }
 // ==================================================onclicks=================================================================
