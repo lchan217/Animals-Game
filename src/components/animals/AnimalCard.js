@@ -1,13 +1,13 @@
+import React from 'react';
 
-import React, { Component } from 'react';
+const AnimalCard = ({animal}) =>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src={animal.img} alt={`${animal.name}'s picture`} />
+   </div>
+  </div>
+</div>
 
 
- export default class AnimalCard extends Component {
-     render() {
-        return (
-            <div className="AnimalCard">
-
-            </div>
-        )
-    }
-}
+export default AnimalCard
