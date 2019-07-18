@@ -9,6 +9,7 @@ class UserForm extends React.Component {
   this.state = {
     name: '',
   };
+  this.handleSubmit = this.handleSubmit.bind(this)
 }
 
   handleChange = event => {
@@ -23,6 +24,15 @@ class UserForm extends React.Component {
     this.setState({
       name: ''
     })
+
+    fetch('http://localhost:3001/api/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({name: this.state.name}),
+        })
+        .then((response) => {return response.json()})
   }
 
   render() {
