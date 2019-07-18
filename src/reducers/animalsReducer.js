@@ -13,7 +13,11 @@ export default function animalsReducer(state = [], action) {
     const breedingToWild = [...state]
     const breedingToWildResult = breedingToWild.map(animal => {
       if(animal.id === action.id){
+        if(animal.health === 5){
         animal.status = "wild"
+      } else if(animal.health < 5) {
+          alert('Oops! Your animal is not healthy enough to be released. Please gain 5 health points.')
+        }
       }
       return animal
     })
