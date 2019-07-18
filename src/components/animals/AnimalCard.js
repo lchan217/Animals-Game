@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {breedingToWild, endangeredToBreeding, nurse} from '../../actions/animalActions.js'
 
-
- export default class AnimalCard extends Component {
+class AnimalCard extends Component {
      render() {
         return (
             <div className="AnimalCard">
@@ -13,3 +14,13 @@ import React, { Component } from 'react';
         )
     }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    breedingToWild: (id) => dispatch(breedingToWild(id)),
+    endangeredToBreeding: (id) => dispatch(endangeredToBreeding(id)),
+    nurse: (id) => dispatch(nurse(id)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(AnimalCard)
