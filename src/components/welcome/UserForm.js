@@ -33,6 +33,8 @@ class UserForm extends React.Component {
           body: JSON.stringify({name: this.state.name}),
         })
         .then((response) => {return response.json()})
+
+    alert(`Welcome ${this.state.name}! Please navigate to the instruction page.`)
   }
 
   render() {
