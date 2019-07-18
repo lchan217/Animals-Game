@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {fetchAnimals, breedingToWild, endangeredToBreeding, nurse} from '../actions/animalActions.js'
-import BreedingList from '../components/animals/BreedingList.js'
-import EndangeredList from '../components/animals/EndangeredList.js'
-import WildList from '../components/animals/WildList.js'
+import AnimalCard from '../components/animals/AnimalCard'
 
 class AnimalContainer extends Component {
     componentDidMount() {
@@ -56,9 +54,7 @@ class AnimalContainer extends Component {
   render() {
     return (
         <div>
-          <BreedingList animals={this.props.animals} showBreedingList={this.showBreedingList()}/>
-          <EndangeredList animals={this.props.animals} showEndangeredList={this.showEndangeredList()}/>
-          <WildList animals={this.props.animals} showWildList={this.showWildList()}/>
+          <AnimalCard animals={this.props.animals} showBreedingList={this.showBreedingList()} showEndangeredList={this.showEndangeredList()} showWildList={this.showWildList()}/>
         </div>
     )
   }
