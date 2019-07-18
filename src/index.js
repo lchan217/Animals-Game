@@ -9,6 +9,8 @@ import { Provider } from 'react-redux';
 import combineReducers from './reducers/index'
 import thunk from 'redux-thunk';
 
+import './index.css';
+
 const store = createStore(combineReducers, applyMiddleware(thunk));
 
 ReactDOM.render(
