@@ -28,7 +28,7 @@ class AnimalContainer extends Component {
 
      showEndangeredList(){
        if (this.props.animals.length > 0 && this.props.filter === "endangered"){
-         let endangered =  this.props.animals.filter(animal => animal.status === "endangered")
+         let endangered = this.props.animals.filter(animal => animal.status === "endangered")
          return endangered.map((animal, idx) =>
          <li key={idx}>Endangered - {animal.name} - {animal.status} - {animal.gender} - {animal.age} - {animal.health} <button onClick={() => this.props.endangeredToBreeding(animal.id)}>Capture</button></li>)
        }
