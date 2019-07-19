@@ -13,10 +13,11 @@ class UserContainer extends Component {
 
    showUsers(){
      if (this.props.users.length > 0 && this.props.filter === "highscores" ) {
+       const sorted = this.props.users.sort(function(a, b) {
+          return a.score - b.score;
+      });
       return (
-        <Card.Group itemsPerRow={5}>
-          {this.props.users.map((user, index) => <HighScores key={index} {...user}/>)}
-        </Card.Group>
+           <HighScores sorted = {sorted}/>
       )
      }
      if (this.props.users.length > 0 && this.props.filter === "cards" ) {
