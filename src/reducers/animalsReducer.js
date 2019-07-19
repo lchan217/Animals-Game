@@ -41,15 +41,10 @@ export default function animalsReducer(state = [], action) {
         animal.health++} else {
           alert("Ready to be released back into the wild!")
         }
-      }
+      } 
       return animal
     })
     return increasedHealth
-
-//     export const addQuote = (quote) =>{
-//   return {type: "ADD_QUOTE",
-//   quote: Object.assign({}, quote, {votes: 0})}
-// }
 
     default:
       return state;

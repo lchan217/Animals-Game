@@ -6,7 +6,7 @@ const AnimalCard = ({animal, breedingToWild, endangeredToBreeding, nurse}) =>
 <div class="ui link cards">
   <div class="card">
     <div class="image">
-      <img src={animal.img} alt={`${animal.name}'s picture`} />
+      <img src={animal.img} alt={`${animal.category} picture`} />
    </div>
      <div class="content">
        <div class="header">{animal.name}</div>
