@@ -20,9 +20,10 @@ class AnimalContainer extends Component {
        }
        if (this.props.animals.length > 0 && this.props.filter === "all"){
          let all =  this.props.animals
+         console.log(all)
          return (
            <Card.Group itemsPerRow={5}>
-             {all.map((animal, index) => <AnimalCard key={index} animal={animal}/>)}
+             {all.map((animal, index) => <AnimalCard key={index} {...animal}/>)}
            </Card.Group>
          )
        }
@@ -45,7 +46,6 @@ class AnimalContainer extends Component {
      }
 
   render() {
-    console.log(this.props.animals)
     return (
         <div>
           {this.showList()}
