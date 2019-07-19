@@ -12,7 +12,7 @@ export default function animalsReducer(state = [], action) {
     case 'BREEDING_TO_WILD':
     const breedingToWild = [...state]
     const breedingToWildResult = breedingToWild.map(animal => {
-      if(animal.id === action.id){
+      if(animal.id === action.id && animal.status === "breeding"){
         if(animal.health === 5){
         animal.status = "wild"
       } else if(animal.health < 5) {
@@ -26,7 +26,7 @@ export default function animalsReducer(state = [], action) {
     case 'ENDANGERED_TO_BREEDING':
     const endangeredToBreeding = [...state]
     const endangeredToBreedingResult = endangeredToBreeding.map(animal => {
-      if(animal.id === action.id){
+      if(animal.id === action.id && animal.status === "endangered"){
         animal.status = "breeding"
       }
       return animal
@@ -36,7 +36,7 @@ export default function animalsReducer(state = [], action) {
     case 'NURSE':
     const currentHealth = [...state]
     const increasedHealth = currentHealth.map(animal => {
-      if(animal.id === action.id){
+      if(animal.id === action.id && animal.status === "breeding"){
         if(animal.health < 5){
         animal.health++} else {
           alert("Ready to be released back into the wild!")
@@ -45,11 +45,6 @@ export default function animalsReducer(state = [], action) {
       return animal
     })
     return increasedHealth
-
-//     export const addQuote = (quote) =>{
-//   return {type: "ADD_QUOTE",
-//   quote: Object.assign({}, quote, {votes: 0})}
-// }
 
     default:
       return state;
