@@ -1,28 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {breedingToWild, endangeredToBreeding, nurse} from '../../actions/animalActions.js'
+import { Card } from 'semantic-ui-react'
 
 const AnimalCard = ({animal, breedingToWild, endangeredToBreeding, nurse}) =>
-<div class="ui four cards">
-  <div class="card">
-    <div class="image">
-      <img src={animal.img} alt={`${animal.category}`} />
-   </div>
-     <div class="content">
-        <div class="header">{animal.name}</div>
-        <div class="description">
-          Health: {animal.health} <div class="ui progress">
-          <div class="bar"></div>
-          </div>
-          Status: {animal.status}
-        </div>
-        <div class="ui three buttons">
-          <div class="ui button" onClick={() => endangeredToBreeding(animal.id)}>Capture</div>
-          <div class="ui button" onClick={() => nurse(animal.id)}>Nurse</div>
-          <div class="ui button" onClick={() => breedingToWild(animal.id)}>Release</div>
-        </div>
-     </div>
-  </div>
+<div className="card">
+  <Card>
+    <div className="image">
+      <img src={animal.img} alt={`${animal.category}`}/>
+    </div>
+    <div className="content">
+      <div className="header">{animal.name}</div>
+    </div>
+    <div className="description">
+      Health: {animal.health}
+      <div className="ui progress">
+        <div className="bar"></div>
+      </div>
+      Status: {animal.status}
+    </div>
+    <div className="ui three buttons">
+      <div className="ui button" onClick={() => endangeredToBreeding(animal.id)}>Capture</div>
+      <div className="ui button" onClick={() => nurse(animal.id)}>Nurse</div>
+      <div className="ui button" onClick={() => breedingToWild(animal.id)}>Release</div>
+    </div>
+  </Card>
 </div>
 
 const mapDispatchToProps = dispatch => {

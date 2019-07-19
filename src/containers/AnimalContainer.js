@@ -13,7 +13,7 @@ class AnimalContainer extends Component {
        if (this.props.animals.length > 0  && this.props.filter === "breeding"){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
          return (
-           <Card.Group itemsPerRow={3}>
+           <Card.Group itemsPerRow={5}>
              {breeding.map((animal, index) => <AnimalCard key={index} animal={animal}/>)}
            </Card.Group>
          )
@@ -21,7 +21,7 @@ class AnimalContainer extends Component {
        if (this.props.animals.length > 0 && this.props.filter === "all"){
          let all =  this.props.animals
          return (
-           <Card.Group itemsPerRow={3}>
+           <Card.Group itemsPerRow={5}>
              {all.map((animal, index) => <AnimalCard key={index} animal={animal}/>)}
            </Card.Group>
          )
@@ -29,7 +29,7 @@ class AnimalContainer extends Component {
        if (this.props.animals.length > 0 && this.props.filter === "endangered"){
          let endangered = this.props.animals.filter(animal => animal.status === "endangered")
          return (
-           <Card.Group itemsPerRow={3}>
+           <Card.Group itemsPerRow={5}>
              {endangered.map((animal, index) => <AnimalCard key={index} animal={animal}/>)}
            </Card.Group>
          )
@@ -37,7 +37,7 @@ class AnimalContainer extends Component {
         if (this.props.animals.length > 0  && this.props.filter === "wild"){
           let wild =  this.props.animals.filter(animal => animal.status === "wild")
           return (
-            <Card.Group itemsPerRow={3}>
+            <Card.Group itemsPerRow={5}>
               {wild.map((animal, index) => <AnimalCard key={index} animal={animal}/>)}
             </Card.Group>
           )
