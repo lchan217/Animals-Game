@@ -1,11 +1,11 @@
 import React from 'react';
 
-const UserCard = () => {
-  return (
-    <div className="userCard">
+const UserCard = ({name, age, occupation, score}) => {
+return (
+  <div className="userCard">
+    
+  </div>
+  )
+}
 
-    </div>
-  );
-};
-
-export default UserCard;
+export default UserCard
