@@ -3,15 +3,18 @@ import { connect } from 'react-redux';
 import {breedingToWild, endangeredToBreeding, nurse} from '../../actions/animalActions.js'
 
 const AnimalCard = ({animal, breedingToWild, endangeredToBreeding, nurse}) =>
-<div class="ui link cards">
+<div class="ui four cards">
   <div class="card">
     <div class="image">
       <img src={animal.img} alt={`${animal.category} picture`} />
    </div>
      <div class="content">
-       <div class="header">{animal.name}</div>
+        <div class="header">{animal.name}</div>
         <div class="description">
-          Health: {animal.health} <br/> Status: {animal.status}
+          Health: {animal.health} <div class="ui progress">
+          <div class="bar"></div>
+          </div>
+          Status: {animal.status}
         </div>
         <div class="ui three buttons">
           <div class="ui button" onClick={() => endangeredToBreeding(animal.id)}>Capture</div>
