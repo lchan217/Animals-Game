@@ -24,17 +24,6 @@ class UserForm extends React.Component {
     this.setState({
       name: ''
     })
-
-    fetch('http://localhost:3001/api/users', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({name: this.state.name}),
-        })
-        .then((response) => {return response.json()})
-
-    alert(`Welcome ${this.state.name}! Please navigate to the instruction page.`)
   }
 
   render() {
