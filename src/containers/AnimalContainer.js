@@ -45,6 +45,7 @@ class AnimalContainer extends Component {
      }
 
   render() {
+    console.log(this.props.animals)
     return (
         <div>
           {this.showList()}

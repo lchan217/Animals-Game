@@ -1,9 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {breedingToWild, endangeredToBreeding, nurse} from '../../actions/animalActions.js'
-import { Card } from 'semantic-ui-react'
+import { Card, Progress } from 'semantic-ui-react'
 
-const AnimalCard = ({animal, breedingToWild, endangeredToBreeding, nurse}) =>
+const AnimalCard = ({animal, breedingToWild, endangeredToBreeding, nurse}) => {
+    console.log(animal.status)
+return (
+
 <div className="card">
   <Card>
     <div className="image">
@@ -14,18 +17,18 @@ const AnimalCard = ({animal, breedingToWild, endangeredToBreeding, nurse}) =>
     </div>
     <div className="description">
       Health: {animal.health}
-      <div className="ui progress">
-        <div className="bar"></div>
-      </div>
+      <Progress percent={animal.health*20}  id="healthBar">
+      </Progress>
       Status: {animal.status}
     </div>
     <div className="ui three buttons">
       <div className="ui button" onClick={() => endangeredToBreeding(animal.id)}>Capture</div>
-      <div className="ui button" onClick={() => nurse(animal.id)}>Nurse</div>
+      <div className="ui button" id="nurse" onClick={() => nurse(animal.id)}>Nurse</div>
       <div className="ui button" onClick={() => breedingToWild(animal.id)}>Release</div>
     </div>
   </Card>
 </div>
+)}
 
 const mapDispatchToProps = dispatch => {
   return {

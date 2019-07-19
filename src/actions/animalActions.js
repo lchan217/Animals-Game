@@ -1,4 +1,4 @@
-export function fetchAnimals() {
+export const fetchAnimals = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_ANIMALS' });
     return fetch('http://localhost:3001/api/animals')
