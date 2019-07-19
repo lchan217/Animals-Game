@@ -7,7 +7,7 @@ const AnimalCard = ({animal, breedingToWild, endangeredToBreeding, nurse}) =>
 <div className="card">
   <Card>
     <div className="image">
-      <img src={animal.img} alt={`${animal.category}`}/>
+      <img src={animal.img} alt={`${animal.category}`} style={{width: 250, height: 300}}/>
     </div>
     <div className="content">
       <div className="header">{animal.name}</div>
