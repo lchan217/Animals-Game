@@ -13,7 +13,7 @@ function App() {
       <div>
         <NavBar />
         <Route exact path='/'  component={UserForm} />
-        <Route exact path='/users'  render={() => <UserContainer />} />
+        <Route exact path='/highscores'  render={() => <UserContainer />} />
         <Route exact path='/instructions'  component={Instructions} />
         <Route exact path='/animals/:id'  render= {({match}) => < AnimalContainer filter={match.params.id}/>} />
       </div>

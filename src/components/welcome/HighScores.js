@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
- export default class UserList extends Component {
+ export default class HighScores extends Component {
 
      render() {
         return (
-            <div className="userList">
+            <div className="highScores">
               {this.props.showUsers}
             </div>
         )

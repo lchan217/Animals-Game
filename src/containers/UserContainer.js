@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {fetchUsers} from '../actions/userActions.js'
-import UserList from '../components/welcome/UserList'
+import HighScores from '../components/welcome/HighScores'
 
 class UserContainer extends Component {
 
@@ -18,7 +18,7 @@ class UserContainer extends Component {
   render() {
     return (
         <div>
-          <UserList users={this.props.users} showUsers={this.showUsers()} />
+          <HighScores users={this.props.users} showUsers={this.showUsers()} />
         </div>
     )
   }
