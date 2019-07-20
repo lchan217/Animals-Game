@@ -16,8 +16,9 @@ class UserContainer extends Component {
        const sorted = this.props.users.sort(function(a, b) {
           return a.score - b.score;
       });
+      const firstFive = sorted.slice(0,5)
       return (
-           <HighScores sorted = {sorted}/>
+        firstFive.map((user, index) => <HighScores key={index} {...user}/>)
       )
      }
      if (this.props.users.length > 0 && this.props.filter === "cards" ) {

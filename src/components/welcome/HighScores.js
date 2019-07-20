@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
- export default class HighScores extends Component {
-
-     render() {
-        return (
-            <div className="highScores">
-              {this.props.showUsers}
-            </div>
-        )
-    }
+const HighScores = ({name, age, occupation, score, index}) => {
+return (
+  <div className="highScores">
+    <li>Name: {name} | Score: {score} seconds</li>
+  </div>
+  )
 }
+
+export default HighScores
