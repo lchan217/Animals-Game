@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {fetchAnimals} from '../actions/animalActions.js'
 import AnimalCard from '../components/animals/AnimalCard'
+import Instructions from '../components/welcome/Instructions'
 import { Card } from 'semantic-ui-react'
 
 class AnimalContainer extends Component {
@@ -42,6 +43,16 @@ class AnimalContainer extends Component {
             </Card.Group>
           )
         }
+     }
+
+     threeRandom(){
+       if (this.props.animals.length > 0){
+         const shuffled = this.props.animals.sort(() => 0.5 - Math.random())
+         let selected = shuffled.slice(0, 3)
+         return (
+           selected.map((animal, index) => <Instructions key={index} {...animal}/>)
+         )
+       }
      }
 
   render() {
