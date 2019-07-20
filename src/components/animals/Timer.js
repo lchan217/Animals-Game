@@ -8,33 +8,33 @@ class Timer extends React.Component {
   };
 }
 
-// componentDidMount() {
+componentDidMount() {
 // needs to happen onClick of first animal to be saved
-//   this.interval = setInterval(this.startClock, 1000)
-// }
-//
-// componentWillUnmount(){
-// needs to happen onCLick of last animal to be saved 
-//   clearInterval(this.interval);
-// }
+  this.interval = setInterval(this.startClock, 1000)
+}
+
+componentWillUnmount(){
+// needs to happen onCLick of last animal to be saved
+  clearInterval(this.interval);
+}
 
   render() {
     return (
       <div>
-          Timer: {this.state.time}
+          Timer: {this.state.time} <button onClick={() => {this.stopClock()}}>Stop</button>
       </div>
     );
   }
 
-  // startClock = () => {
-  //   this.setState(prevState => ({
-  //     time: prevState.time+1
-  //   }))
-  // }
-  //
-  // stopClock = () => {
-  //   clearInterval(this.interval)
-  // }
+  startClock = () => {
+    this.setState(prevState => ({
+      time: prevState.time+1
+    }))
+  }
+
+  stopClock = () => {
+    clearInterval(this.interval)
+  }
 }
 
 export default Timer
