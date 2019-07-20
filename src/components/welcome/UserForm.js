@@ -29,29 +29,31 @@ class UserForm extends React.Component {
   }
 
   render() {
+    const { name, age, occupation } = this.state
+    const { handleChange, handleSubmit } = this
     return (
       <div>
-        <form onSubmit={event => this.handleSubmit(event)}>
+        <form onSubmit={handleSubmit}>
         Name:
           <input
             type="text"
             name="name"
-            value={this.state.name}
-            onChange={this.handleChange}
+            value={name}
+            onChange={handleChange}
           />
         Age:
           <input
             type="text"
             name="age"
-            value={this.state.age}
-            onChange={this.handleChange}
+            value={age}
+            onChange={handleChange}
           />
         Occupation:
           <input
             type="text"
             name="occupation"
-            value={this.state.occupation}
-            onChange={this.handleChange}
+            value={occupation}
+            onChange={handleChange}
           />
         <input type="submit" />
         </form>

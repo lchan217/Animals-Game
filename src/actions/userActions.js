@@ -9,15 +9,18 @@ export const fetchUsers = () => {
 
 export const addUser = (user) =>{
   return (dispatch) => {
+    const body = {name: user.name, age: user.age, occupation: user.occupation}
     fetch('http://localhost:3001/api/users', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+             Accept: 'application/json'
           },
-          body: JSON.stringify({name: user.name}),
+          body: JSON.stringify(body),
         })
-        .then((response) => {return response.json()})
-
+        .then(resp => resp.json())
+        .then(user => console.log(user))
+        .then(user => dispatch({type:"ADD_USER", user}))
     alert(`Welcome ${user.name}! Please navigate to the instruction page.`)
   }
 }
