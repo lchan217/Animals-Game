@@ -7,32 +7,50 @@ class UserForm extends React.Component {
   super();
   this.state = {
     name: '',
+    age: '',
+    occupation: '',
   };
   this.handleSubmit = this.handleSubmit.bind(this)
+  this.handleChange = this.handleChange.bind(this)
 }
 
   handleChange = event => {
-    this.setState({
-      name: event.target.value
-    });
+    this.setState({ [event.target.name]: event.target.value });
   }
 
     handleSubmit = event => {
     event.preventDefault()
     this.props.addUser(this.state)
     this.setState({
-      name: ''
+      name: '',
+      age: '',
+      occupation: '',
     })
   }
 
   render() {
     return (
       <div>
-      Please enter your name:
         <form onSubmit={event => this.handleSubmit(event)}>
+        Name:
           <input
             type="text"
-            value={this.state.value}
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+        Age:
+          <input
+            type="text"
+            name="age"
+            value={this.state.age}
+            onChange={this.handleChange}
+          />
+        Occupation:
+          <input
+            type="text"
+            name="occupation"
+            value={this.state.occupation}
             onChange={this.handleChange}
           />
         <input type="submit" />
