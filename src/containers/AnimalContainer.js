@@ -12,15 +12,6 @@ class AnimalContainer extends Component {
      }
 // =================================================showlists=================================================================
      showAnimalCard(){
-       // if (this.props.animals.length > 0  && this.props.filter === "breeding"){
-       //   let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
-       //   return (
-       //     <Card.Group itemsPerRow={5}>
-       //       {breeding.map((animal, index) => <AnimalCard key={index} {...animal}/>)}
-       //     </Card.Group>
-       //   )
-       // }
-
        if (this.props.animals.length > 0){
          const all =  this.props.animals.sort(function(a,b){
            return a.id - b.id
@@ -31,22 +22,6 @@ class AnimalContainer extends Component {
            </Card.Group>
          )
        }
-       // if (this.props.animals.length > 0 && this.props.filter === "endangered"){
-       //   let endangered = this.props.animals.filter(animal => animal.status === "endangered")
-       //   return (
-       //     <Card.Group itemsPerRow={5}>
-       //       {endangered.map((animal, index) => <AnimalCard key={index} {...animal}/>)}
-       //     </Card.Group>
-       //   )
-       // }
-        // if (this.props.animals.length > 0  && this.props.filter === "wild"){
-        //   let wild =  this.props.animals.filter(animal => animal.status === "wild")
-        //   return (
-        //     <Card.Group itemsPerRow={5}>
-        //       {wild.map((animal, index) => <AnimalCard key={index} {...animal}/>)}
-        //     </Card.Group>
-        //   )
-        // }
      }
 
   threeRandom = () =>{
