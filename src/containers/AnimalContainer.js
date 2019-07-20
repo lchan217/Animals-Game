@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {fetchAnimals} from '../actions/animalActions.js'
 import AnimalCard from '../components/animals/AnimalCard'
 import Instructions from '../components/animals/Instructions'
+import Timer from '../components/animals/Timer'
 import { Card } from 'semantic-ui-react'
 
 class AnimalContainer extends Component {
@@ -10,7 +11,7 @@ class AnimalContainer extends Component {
       this.props.fetchAnimals()
      }
 // =================================================showlists=================================================================
-     showList(){
+     showAnimalCard(){
        if (this.props.animals.length > 0  && this.props.filter === "breeding"){
          let breeding =  this.props.animals.filter(animal => animal.status === "breeding")
          return (
@@ -43,20 +44,30 @@ class AnimalContainer extends Component {
             </Card.Group>
           )
         }
-        if (this.props.animals.length > 0 && this.props.filter === "instructions"){
-          const shuffled = this.props.animals.sort(() => 0.5 - Math.random())
-          let selected = shuffled.slice(0, 3)
-          return (
-            <Instructions selected={selected}/>
-          )
-        }
      }
 
+  threeRandom(){
+    if (this.props.animals.length > 0 && this.props.filter === "instructions"){
+      const shuffled = this.props.animals.sort(() => 0.5 - Math.random())
+      let selected = shuffled.slice(0, 3)
+      return (
+        <Instructions selected={selected}/>
+      )
+    }
+  }
+
+  showTimer(){
+    return (
+      <Timer />
+    )
+  }
 
   render() {
     return (
         <div>
-          {this.showList()}
+          {this.showTimer()}
+          {this.threeRandom()}
+          {this.showAnimalCard()}
         </div>
     )
   }

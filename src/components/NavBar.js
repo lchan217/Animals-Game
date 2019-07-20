@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Timer from './Timer';
 
 const NavBar = () => {
   return (
@@ -13,7 +12,6 @@ const NavBar = () => {
       <div className="item"><Link to='/animals/breeding' exact>Breeding Animals</Link></div>
       <div className="item"><Link to='/animals/endangered' exact>Endangered Animals</Link></div>
       <div className="item"><Link to='/animals/wild' exact>Wild Animals</Link></div>
-      <div className="item"><b><Timer /></b></div>
     </div>
   );
 };
