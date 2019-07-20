@@ -5,6 +5,7 @@ import UserContainer from './containers/UserContainer.js'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import UserForm from './components/welcome/UserForm';
 import NavBar from './components/NavBar';
+import Timer from './components/Timer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <NavBar />
         <Route exact path='/'  component={UserForm} />
         <Route exact path='/users/:id' render= {({match}) => < UserContainer filter={match.params.id}/>} />
+        <Route path='/animals' component={Timer} />
         <Route exact path='/animals/:id' render= {({match}) => < AnimalContainer filter={match.params.id}/>} />
       </div>
     </Router>
