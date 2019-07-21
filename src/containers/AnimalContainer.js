@@ -24,6 +24,15 @@ class AnimalContainer extends Component {
        }
      }
 
+  saveThree() {
+    if(this.props.animals.length > 0) {
+      const saved = this.props.animals.filter(animal => animal.status === "wild")
+      if (saved.length > 2) {
+        alert('Congrats, you saved three animals!')
+      }
+
+    }
+  }
   threeRandom = () =>{
     if (this.props.animals.length > 0){
       const shuffled = this.props.animals.sort(() => 0.5 - Math.random())
@@ -45,6 +54,7 @@ class AnimalContainer extends Component {
         <div>
           {this.showTimer()}
           {this.threeRandom()}
+          {this.saveThree()}
           {this.showAnimalCard()}
         </div>
     )
