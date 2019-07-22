@@ -32,37 +32,49 @@ class UserForm extends React.Component {
     const { name, age, occupation, score } = this.state
     const { handleChange, handleSubmit } = this
     return (
-      <div>
+      <div className="ui big form" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <form onSubmit={handleSubmit}>
-        Name:
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChange}
-          />
-        Age:
-          <input
-            type="text"
-            name="age"
-            value={age}
-            onChange={handleChange}
-          />
-        Occupation:
-          <input
-            type="text"
-            name="occupation"
-            value={occupation}
-            onChange={handleChange}
-          />
-        Score:
-            <input
-              type="text"
+          <div className="field">
+            <label>Name</label>
+            <input type="text"
+              name="name"
+              style={{width: 400}}
+              placeholder="Name"
+              value={name}
+              onChange={handleChange}
+              />
+          </div>
+          <div className="field">
+            <label>Age</label>
+            <input type="text"
+              name="age"
+              style={{width: 400}}
+              placeholder="Age"
+              value={age}
+              onChange={handleChange}
+              />
+          </div>
+          <div className="field">
+            <label>Occupation</label>
+            <input type="text"
+              name="occupation"
+              style={{width: 400}}
+              placeholder="Occupation"
+              value={occupation}
+              onChange={handleChange}
+              />
+          </div>
+          <div className="field">
+            <label>Score</label>
+            <input type="text"
               name="score"
+              style={{width: 400}}
+              placeholder="Score"
               value={score}
               onChange={handleChange}
-            />
-        <input type="submit" />
+              />
+          </div>
+          <button className="ui submit button" type="submit">Submit</button>
         </form>
       </div>
     );
