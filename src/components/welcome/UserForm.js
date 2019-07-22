@@ -9,9 +9,8 @@ class UserForm extends React.Component {
     name: '',
     age: '',
     occupation: '',
+    score: ''
   };
-  this.handleSubmit = this.handleSubmit.bind(this)
-  this.handleChange = this.handleChange.bind(this)
 }
 
   handleChange = event => {
@@ -25,11 +24,12 @@ class UserForm extends React.Component {
       name: '',
       age: '',
       occupation: '',
+      score: ''
     })
   }
 
   render() {
-    const { name, age, occupation } = this.state
+    const { name, age, occupation, score } = this.state
     const { handleChange, handleSubmit } = this
     return (
       <div>
@@ -55,6 +55,13 @@ class UserForm extends React.Component {
             value={occupation}
             onChange={handleChange}
           />
+        Score:
+            <input
+              type="text"
+              name="score"
+              value={score}
+              onChange={handleChange}
+            />
         <input type="submit" />
         </form>
       </div>

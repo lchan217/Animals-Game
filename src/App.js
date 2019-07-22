@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div>
         <NavBar />
-        <Route exact path='/'  component={UserForm} />
+        <Route exact path='/data'  component={UserForm} />
         <Route exact path='/instructions'  component={Instructions} />
         <Route exact path='/animals'  component={AnimalContainer} />
         <Route exact path='/users/:id' render= {({match}) => < UserContainer filter={match.params.id}/>} />
