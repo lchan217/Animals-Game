@@ -9,7 +9,6 @@ class Timer extends React.Component {
 }
 
 componentDidMount() {
-// needs to happen onClick of first animal to be saved
   this.interval = setInterval(this.startClock, 1000)
 }
 
@@ -34,6 +33,7 @@ componentWillUnmount(){
 
   stopClock = () => {
     clearInterval(this.interval)
+    alert('Remember to record your score! No cheating!')
   }
 }
 
