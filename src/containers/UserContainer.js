@@ -18,14 +18,20 @@ class UserContainer extends Component {
       });
       const firstFive = sorted.slice(0,5)
       return (
-        firstFive.map((user, index) => <HighScores key={index} {...user}/>)
+        <div>
+          <h2>Top 5 Scores</h2>
+          {firstFive.map((user, index) => <HighScores key={index} {...user}/>)}
+        </div>
       )
      }
      if (this.props.users.length > 0 && this.props.filter === "cards" ) {
        return (
-         <Card.Group itemsPerRow={5}>
-           {this.props.users.map((user, index) => <UserCard key={index} {...user}/>)}
-         </Card.Group>
+         <div>
+           <h2>User Cards</h2>
+           <Card.Group itemsPerRow={5}>
+             {this.props.users.map((user, index) => <UserCard key={index} {...user}/>)}
+           </Card.Group>
+         </div>
        )
      }
    }
