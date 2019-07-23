@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react'
 const UserCard = ({name, age, occupation, score, created_at}) => {
 return (
   <div className="userCard">
-    <div class="ui cards">
+    <div className="ui cards">
       <Card>
         <div className="content">
           <div className="header">
