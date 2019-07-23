@@ -6,7 +6,7 @@ import { Card, Progress } from 'semantic-ui-react'
 const AnimalCard = ({status, health, id, img, category, name, nursingToWild, endangeredToNursing, nurse}) => {
 return (
 
-<div className="card">
+<div className="animalCard">
   <Card>
     <div className="image">
         <img src={img} alt={`${category}`} style={{width: 250, height: 300}}/>

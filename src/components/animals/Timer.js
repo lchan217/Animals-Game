@@ -19,7 +19,7 @@ componentWillUnmount(){
 
   render() {
     return (
-      <div>
+      <div className="Timer">
           Timer: {this.state.time} <button onClick={() => {this.stopClock()}}>Stop</button>
       </div>
     );

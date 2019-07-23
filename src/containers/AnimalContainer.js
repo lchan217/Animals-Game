@@ -53,7 +53,7 @@ class AnimalContainer extends Component {
     return (
         <div>
           {this.showTimer()}
-
+<br></br>
           {this.saveThree()}
           {this.showAnimalCard()}
         </div>
