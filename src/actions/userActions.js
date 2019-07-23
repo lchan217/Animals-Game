@@ -9,7 +9,7 @@ export const fetchUsers = () => {
 
 export const addUser = (user) =>{
   return (dispatch) => {
-    const body = {name: user.name, age: user.age, occupation: user.occupation}
+    const body = {name: user.name, age: user.age, occupation: user.occupation, score: user.score}
     fetch('http://localhost:3001/api/users', {
           method: 'POST',
           headers: {
@@ -21,6 +21,6 @@ export const addUser = (user) =>{
         .then(resp => resp.json())
         .then(user => console.log(user))
         .then(user => dispatch({type:"ADD_USER", user}))
-    alert(`Welcome ${user.name}! Please navigate to the instruction page.`)
+    alert(`Thanks for playing, ${user.name}!`)
   }
 }

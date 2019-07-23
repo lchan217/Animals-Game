@@ -6,17 +6,17 @@ return (
   <div className="userCard">
     <div class="ui cards">
       <Card>
-        <div class="content">
-          <div class="header">
+        <div className="content">
+          <div className="header">
             {name}
           </div>
-          <div class="meta">
+          <div className="meta">
             Age: {age}
           </div>
-          <div class="meta">
+          <div className="meta">
             Occupation: {occupation}
           </div>
-          <div class="description">
+          <div className="description">
             <b>Score: {score}</b>
           </div>
         </div>
