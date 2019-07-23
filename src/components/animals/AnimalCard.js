@@ -29,12 +29,5 @@ return (
 </div>
 )}
 
-const mapDispatchToProps = dispatch => {
-  return {
-    nursingToWild: (id) => dispatch(nursingToWild(id)),
-    endangeredToNursing: (id) => dispatch(endangeredToNursing(id)),
-    nurse: (id) => dispatch(nurse(id))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(AnimalCard)
+export default connect(null,
+  {nursingToWild, endangeredToNursing, nurse})(AnimalCard)

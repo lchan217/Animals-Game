@@ -53,7 +53,7 @@ class AnimalContainer extends Component {
     return (
         <div>
           {this.showTimer()}
-          
+
           {this.saveThree()}
           {this.showAnimalCard()}
         </div>
@@ -67,10 +67,5 @@ const mapStateToProps = state => {
     };
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchAnimals: () => dispatch(fetchAnimals()),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AnimalContainer)
+export default connect(mapStateToProps,
+  {fetchAnimals})(AnimalContainer)

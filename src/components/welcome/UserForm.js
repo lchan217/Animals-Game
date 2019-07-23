@@ -81,10 +81,4 @@ class UserForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addUser: (user) => dispatch(addUser(user)),
-  }
-}
-
-export default connect(null, mapDispatchToProps)(UserForm)
+export default connect(null, {addUser})(UserForm)
