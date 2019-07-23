@@ -4,18 +4,21 @@ import UserContainer from './containers/UserContainer.js'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import UserForm from './components/welcome/UserForm';
-import Instructions from './components/welcome/Instructions';
 import NavBar from './components/NavBar';
+import Instructions from './components/Instructions';
+
+//<Route exact path='/animals/:id' render= {({match}) => < AnimalContainer filter={match.params.id}/>} />
 
 function App() {
   return (
     <Router>
       <div>
         <NavBar />
-        <Route exact path='/'  component={UserForm} />
+        <Route exact path='/data'  component={UserForm} />
+        <Route exact path='/'  component={Instructions} />
+        <Route exact path='/animals'  component={AnimalContainer} />
         <Route exact path='/users/:id' render= {({match}) => < UserContainer filter={match.params.id}/>} />
-        <Route exact path='/instructions' component={Instructions} />
-        <Route exact path='/animals/:id' render= {({match}) => < AnimalContainer filter={match.params.id}/>} />
+
       </div>
     </Router>
   )

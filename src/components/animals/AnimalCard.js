@@ -16,7 +16,7 @@ return (
       </div>
       <div className="description">
         Health: {health}
-        <Progress percent={health*20}  id="healthBar">
+        <Progress indicating percent={health*20}  id="healthBar">
         </Progress>
       Status: {status}
     </div>

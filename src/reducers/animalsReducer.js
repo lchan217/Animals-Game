@@ -6,9 +6,6 @@ export default function animalsReducer(state = [], action) {
     case 'FETCH_ANIMALS':
     return action.payload
 
-    // const newState = [...state, action.quote]
-    // return newState
-
     case 'BREEDING_TO_WILD':
     const breedingToWild = [...state]
     const breedingToWildResult = breedingToWild.map(animal => {
