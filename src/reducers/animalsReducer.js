@@ -6,10 +6,10 @@ export default function animalsReducer(state = [], action) {
     case 'FETCH_ANIMALS':
     return action.payload
 
-    case 'BREEDING_TO_WILD':
-    const breedingToWild = [...state]
-    const breedingToWildResult = breedingToWild.map(animal => {
-      if(animal.id === action.id && animal.status === "breeding"){
+    case 'NURSING_TO_WILD':
+    const nursingToWild = [...state]
+    const nursingToWildResult = nursingToWild.map(animal => {
+      if(animal.id === action.id && animal.status === "nursing"){
         if(animal.health === 5){
         animal.status = "wild"
       } else if(animal.health < 5) {
@@ -18,22 +18,22 @@ export default function animalsReducer(state = [], action) {
       }
       return animal
     })
-    return breedingToWildResult
+    return nursingToWildResult
 
-    case 'ENDANGERED_TO_BREEDING':
-    const endangeredToBreeding = [...state]
-    const endangeredToBreedingResult = endangeredToBreeding.map(animal => {
+    case 'ENDANGERED_TO_NURSING':
+    const endangeredToNursing = [...state]
+    const endangeredToNursingResult = endangeredToNursing.map(animal => {
       if(animal.id === action.id && animal.status === "endangered"){
-        animal.status = "breeding"
+        animal.status = "nursing"
       }
       return animal
     })
-    return endangeredToBreedingResult
+    return endangeredToNursingResult
 
     case 'NURSE':
     const currentHealth = [...state]
     const increasedHealth = currentHealth.map(animal => {
-      if(animal.id === action.id && animal.status === "breeding"){
+      if(animal.id === action.id && animal.status === "nursing"){
         if(animal.health < 5){
         animal.health++} else {
           alert("Ready to be released back into the wild!")

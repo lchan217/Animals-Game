@@ -7,13 +7,13 @@ export const fetchAnimals = () => {
   };
 }
 
-export const breedingToWild = (id) =>{
-  return {type: "BREEDING_TO_WILD",
+export const nursingToWild = (id) =>{
+  return {type: "NURSING_TO_WILD",
   id}
 }
 
-export const endangeredToBreeding = (id) =>{
-  return {type: "ENDANGERED_TO_BREEDING",
+export const endangeredToNursing = (id) =>{
+  return {type: "ENDANGERED_TO_NURSING",
   id}
 }
 

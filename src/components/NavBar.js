@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// <div className="item"><Link to='/animals/breeding' exact>Breeding Animals</Link></div>
-// <div className="item"><Link to='/animals/endangered' exact>Endangered Animals</Link></div>
-// <div className="item"><Link to='/animals/wild' exact>Wild Animals</Link></div>
-
 const NavBar = () => {
   return (
     <div className='ui tabular menu'>

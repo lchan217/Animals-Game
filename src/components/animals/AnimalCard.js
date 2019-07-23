@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {breedingToWild, endangeredToBreeding, nurse} from '../../actions/animalActions.js'
+import {nursingToWild, endangeredToNursing, nurse} from '../../actions/animalActions.js'
 import { Card, Progress } from 'semantic-ui-react'
 
-const AnimalCard = ({status, health, id, img, category, name, breedingToWild, endangeredToBreeding, nurse}) => {
+const AnimalCard = ({status, health, id, img, category, name, nursingToWild, endangeredToNursing, nurse}) => {
 return (
 
 <div className="card">
@@ -21,9 +21,9 @@ return (
       Status: {status}
     </div>
     <div className="ui three buttons">
-      <div className="ui button" onClick={() => endangeredToBreeding(id)}>Capture</div>
+      <div className="ui button" onClick={() => endangeredToNursing(id)}>Capture</div>
       <div className="ui button" id="nurse" onClick={() => nurse(id)}>Nurse</div>
-      <div className="ui button" onClick={() => breedingToWild(id)}>Release</div>
+      <div className="ui button" onClick={() => nursingToWild(id)}>Release</div>
     </div>
   </Card>
 </div>
@@ -31,8 +31,8 @@ return (
 
 const mapDispatchToProps = dispatch => {
   return {
-    breedingToWild: (id) => dispatch(breedingToWild(id)),
-    endangeredToBreeding: (id) => dispatch(endangeredToBreeding(id)),
+    nursingToWild: (id) => dispatch(nursingToWild(id)),
+    endangeredToNursing: (id) => dispatch(endangeredToNursing(id)),
     nurse: (id) => dispatch(nurse(id))
   }
 }
