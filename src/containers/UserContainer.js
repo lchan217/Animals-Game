@@ -25,6 +25,7 @@ class UserContainer extends Component {
       )
      }
      if (this.props.users.length > 0 && this.props.filter === "cards" ) {
+       this.props.users.sort((a,b) => a.name.localeCompare(b.name))
        return (
          <div>
            <h2>User Cards</h2>
