@@ -28,7 +28,7 @@ class AnimalContainer extends Component {
     if(this.props.animals.length > 0) {
       const saved = this.props.animals.filter(animal => animal.status === "wild")
       if (saved.length > 2) {
-        alert('Congrats, you saved three animals!')
+        alert("Congrats, you saved three animals! Don't forget to stop the timer!")
       }
 
     }
