@@ -2,12 +2,13 @@
 There are endangered animals that users need to capture, nurse to health, and release back into the wild.
 
 ## Installation
-$ fork and clone from https://github.com/lchan217/Project-5-Animals-Game
-$ npm install
-$ npm start
-
-$ fork and clone Rails backend from https://github.com/lchan217/Project-5-Animal-Api
-$ bundle exec rails s -p 3001
+    $ fork and clone from https://github.com/lchan217/Project-5-Animals-Game
+    $ npm install
+    $ npm start
+ 
+    $ fork and clone Rails backend from https://github.com/lchan217/Project-5-Animal-Api
+    $ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start  (if needed)
+    $ $bundle exec rails s -p 3001
 
 ## Learn More
 
