@@ -34,5 +34,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "There are endangered animals that users need to capture, nurse to health, and release back into the wild.",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lchan217/Animals-Game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lchan217/Animals-Game/issues"
+  },
+  "homepage": "https://github.com/lchan217/Animals-Game#readme"
 }
