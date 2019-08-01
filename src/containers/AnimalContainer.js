@@ -27,21 +27,21 @@ class AnimalContainer extends Component {
   saveThree() {
     if(this.props.animals.length > 0) {
       const saved = this.props.animals.filter(animal => animal.status === "wild")
-      if (saved.length > 2) {
+      if (saved.length === 3) {
         alert("Congrats, you saved three animals! Don't forget to stop the timer!")
+        this.props.animals.map(animal => animal.status = "endangered")
       }
-
     }
   }
-  threeRandom = () =>{
-    if (this.props.animals.length > 0){
-      const shuffled = this.props.animals.sort(() => 0.5 - Math.random())
-      let selected = shuffled.slice(0, 3)
-      return (
-        <ThreeRandom selected={selected}/>
-      )
-    }
-  }
+  // threeRandom = () =>{
+  //   if (this.props.animals.length > 0){
+  //     const shuffled = this.props.animals.sort(() => 0.5 - Math.random())
+  //     let selected = shuffled.slice(0, 3)
+  //     return (
+  //       <ThreeRandom selected={selected}/>
+  //     )
+  //   }
+  // }
 
   showTimer(){
     return (
