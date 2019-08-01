@@ -1,9 +1,9 @@
 import React from 'react';
-
-const HighScores = ({name, age, occupation, score, index}) => {
+const HighScores = ({name, age, occupation, score, index}) =>
+ {
 return (
   <div className="highScores">
-    <li>Name: {name} | Score: {score} seconds</li>
+    <p>Name: {name} | Score: {score} seconds </p>
   </div>
   )
 }

@@ -5,6 +5,16 @@ import HighScores from '../components/welcome/HighScores'
 import UserCard from '../components/welcome/UserCard'
 import { Card } from 'semantic-ui-react'
 
+const box = {
+  fontSize: 25,
+  width: '100%',
+  height: '800px',
+  padding: '40px',
+  backgroundImage: "url(" + "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" + ")" ,
+  backgroundSize: 'cover',
+  }
+
+
 class UserContainer extends Component {
 
   componentDidMount() {
@@ -18,8 +28,8 @@ class UserContainer extends Component {
       });
       const firstFive = sorted.slice(0,5)
       return (
-        <div>
-          <h2>Top 5 Scores</h2>
+        <div style={box}>
+          <h2 style={{fontSize: 38}}>Top 5 Scores</h2>
           {firstFive.map((user, index) => <HighScores key={index} {...user}/>)}
         </div>
       )
