@@ -22,7 +22,7 @@ return (
     </div>
     <div className="ui three buttons">
       <div className="ui button" onClick={() => endangeredToNursing(id)}>Capture</div>
-      <div className="ui button" id="nurse" onClick={() => nurse(id)}>Nurse</div>
+      <div className="ui button" onClick={() => nurse(id)}>Nurse</div>
       <div className="ui button" onClick={() => nursingToWild(id)}>Release</div>
     </div>
   </Card>

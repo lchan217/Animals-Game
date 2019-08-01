@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {fetchAnimals} from '../actions/animalActions.js'
 import AnimalCard from '../components/animals/AnimalCard'
-import ThreeRandom from '../components/animals/ThreeRandom'
+// import ThreeRandom from '../components/animals/ThreeRandom'
 import Timer from '../components/animals/Timer'
 import { Card } from 'semantic-ui-react'
 
@@ -26,10 +26,10 @@ class AnimalContainer extends Component {
 
   saveThree() {
     if(this.props.animals.length > 0) {
-      const saved = this.props.animals.filter(animal => animal.status === "wild")
+      const saved = this.props.animals.filter(animal => animal.status === "Wild")
       if (saved.length === 3) {
         alert("Congrats, you saved three animals! Don't forget to stop the timer!")
-        this.props.animals.map(animal => animal.status = "endangered")
+        this.props.animals.map(animal => animal.status = "Endangered")
       }
     }
   }
