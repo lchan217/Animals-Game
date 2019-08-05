@@ -1,1 +1,1 @@
-{ "root": "build/", "routes": { "/**": "App.js" } }
+{ "root": "build/", "routes": { "/**": "index.js" } }
