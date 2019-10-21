@@ -13,7 +13,6 @@ componentDidMount() {
 }
 
 componentWillUnmount(){
-// needs to happen onCLick of last animal to be saved
   clearInterval(this.interval);
 }
 

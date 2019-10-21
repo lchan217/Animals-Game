@@ -7,8 +7,6 @@ import UserForm from './components/welcome/UserForm';
 import NavBar from './components/NavBar';
 import Instructions from './components/Instructions';
 
-//<Route exact path='/animals/:id' render= {({match}) => < AnimalContainer filter={match.params.id}/>} />
-
 function App() {
   return (
     <Router>
