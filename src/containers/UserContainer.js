@@ -10,7 +10,7 @@ const box = {
   width: '100%',
   height: '800px',
   padding: '40px',
-  backgroundImage: "url(" + "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" + ")" ,
+  backgroundImage: `url(https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)`,
   backgroundSize: 'cover',
   }
 

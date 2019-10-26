@@ -4,7 +4,7 @@ const Instructions = (props) => {
   const background = {
     width: '100%',
     height: '800px',
-    backgroundImage: "url(" + "https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" + ")" ,
+    backgroundImage: `url(https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)`,
     backgroundSize: 'cover'
   };
 
