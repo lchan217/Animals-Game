@@ -37,7 +37,9 @@
   },
   "description": "There are endangered animals that users need to capture, nurse to health, and release back into the wild.",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lchan217/Animals-Game.git"
