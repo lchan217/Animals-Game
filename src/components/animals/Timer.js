@@ -23,6 +23,7 @@ class Timer extends React.Component {
     if (this.state.showAlert) {
       return (
         <div className='game-over-alert'>
+          <br />
           <Icon name='exclamation triangle icon'></Icon>
           Remember to record your score! No cheating!
         </div>
@@ -33,7 +34,6 @@ class Timer extends React.Component {
   render() {
     return (
       <div>
-        {this.showGameOver()}
         <b>Timer: {this.state.time} </b>
         <Button
           color='red'
@@ -44,6 +44,7 @@ class Timer extends React.Component {
         >
           Stop
         </Button>
+        {this.showGameOver()}
       </div>
     );
   }

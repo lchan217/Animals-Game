@@ -1,3 +1,5 @@
 .game-over-alert {
   color: red;
+  font-size: 2em;
+  text-align: center;
 }
