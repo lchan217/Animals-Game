@@ -1,11 +1,13 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
+import "../../css/Timer.css";
 
 class Timer extends React.Component {
   constructor() {
     super();
     this.state = {
-      time: 0
+      time: 0,
+      showAlert: false
     };
   }
 
@@ -17,10 +19,22 @@ class Timer extends React.Component {
     clearInterval(this.interval);
   }
 
+  showGameOver = () => {
+    if (this.state.showAlert) {
+      return (
+        <div className='game-over-alert'>
+          <Icon name='exclamation triangle icon'></Icon>
+          Remember to record your score! No cheating!
+        </div>
+      );
+    }
+  };
+
   render() {
     return (
-      <div className='timer'>
-        Timer: {this.state.time}{" "}
+      <div>
+        {this.showGameOver()}
+        <b>Timer: {this.state.time} </b>
         <Button
           color='red'
           size='mini'
@@ -42,7 +56,9 @@ class Timer extends React.Component {
 
   stopClock = () => {
     clearInterval(this.interval);
-    alert("Remember to record your score! No cheating!");
+    this.setState({
+      showAlert: true
+    });
   };
 }
 
