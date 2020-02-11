@@ -6,6 +6,7 @@ import {
   nurse
 } from "../../actions/animalActions.js";
 import { Card, Progress, Image, Button } from "semantic-ui-react";
+import "../../css/AnimalCard.css";
 
 const AnimalCard = ({
   status,
@@ -21,9 +22,9 @@ const AnimalCard = ({
   return (
     <Card>
       <Image
+        className='animal-card-image'
         src={img}
         alt={`${category}`}
-        style={{ width: 250, height: 300 }}
       ></Image>
 
       <Card.Content>
