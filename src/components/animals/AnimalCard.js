@@ -1,33 +1,48 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import {nursingToWild, endangeredToNursing, nurse} from '../../actions/animalActions.js'
-import { Card, Progress } from 'semantic-ui-react'
+import React from "react";
+import { connect } from "react-redux";
+import {
+  nursingToWild,
+  endangeredToNursing,
+  nurse
+} from "../../actions/animalActions.js";
+import { Card, Progress, Image, Button } from "semantic-ui-react";
 
-const AnimalCard = ({status, health, id, img, category, name, nursingToWild, endangeredToNursing, nurse}) => {
-return (
+const AnimalCard = ({
+  status,
+  health,
+  id,
+  img,
+  category,
+  name,
+  nursingToWild,
+  endangeredToNursing,
+  nurse
+}) => {
+  return (
+    <Card>
+      <Image
+        src={img}
+        alt={`${category}`}
+        style={{ width: 250, height: 300 }}
+      ></Image>
 
-<div className="animalCard">
-  <Card>
-    <div className="image">
-        <img src={img} alt={`${category}`} style={{width: 250, height: 300}}/>
-      </div>
-      <div className="content">
-        <div className="header">{name}</div>
-      </div>
-      <div className="description">
+      <Card.Content>
+        <div className='header'>{name}</div>
+      </Card.Content>
+      <Card.Description>
         Health: {health}
-        <Progress indicating percent={health*20}  id="healthBar">
-        </Progress>
-      Status: {status}
-    </div>
-    <div className="ui three buttons">
-      <div className="ui button" onClick={() => endangeredToNursing(id)}>Capture</div>
-      <div className="ui button" onClick={() => nurse(id)}>Nurse</div>
-      <div className="ui button" onClick={() => nursingToWild(id)}>Release</div>
-    </div>
-  </Card>
-</div>
-)}
+        <Progress indicating percent={health * 20} id='healthBar'></Progress>
+        Status: {status}
+      </Card.Description>
+      <Button.Group>
+        <Button onClick={() => endangeredToNursing(id)}>Capture</Button>
+        <Button onClick={() => nurse(id)}>Nurse</Button>
+        <Button onClick={() => nursingToWild(id)}>Release</Button>
+      </Button.Group>
+    </Card>
+  );
+};
 
-export default connect(null,
-  {nursingToWild, endangeredToNursing, nurse})(AnimalCard)
+export default connect(null, { nursingToWild, endangeredToNursing, nurse })(
+  AnimalCard
+);
