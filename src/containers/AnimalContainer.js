@@ -16,7 +16,7 @@ class AnimalContainer extends Component {
         return a.id - b.id;
       });
       return (
-        <Card.Group>
+        <Card.Group classname='animal-cards'>
           {all.map((animal, index) => (
             <AnimalCard key={index} {...animal} />
           ))}

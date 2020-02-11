@@ -20,7 +20,7 @@ const AnimalCard = ({
   nurse
 }) => {
   return (
-    <Card>
+    <Card className='animal-card'>
       <Image
         className='animal-card-image'
         src={img}
