@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addUser } from "../../actions/userActions.js";
+import { Form, Button } from "semantic-ui-react";
+import "../../css/UserForm.css";
 
 class UserForm extends React.Component {
   constructor() {
@@ -18,6 +20,7 @@ class UserForm extends React.Component {
   };
 
   handleSubmit = event => {
+    debugger;
     event.preventDefault();
     this.props.addUser(this.state);
     this.setState({
@@ -40,62 +43,71 @@ class UserForm extends React.Component {
     };
     return (
       <div style={background}>
-        <div className='userForm'>
-          <div
-            className='ui big form'
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <form onSubmit={handleSubmit}>
-              <div className='field'>
-                <input
-                  type='text'
-                  name='name'
-                  style={{ width: 400 }}
-                  placeholder='Name'
-                  value={name}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className='field'>
-                <input
-                  type='text'
-                  name='age'
-                  style={{ width: 400 }}
-                  placeholder='Age'
-                  value={age}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className='field'>
-                <input
-                  type='text'
-                  name='occupation'
-                  style={{ width: 400 }}
-                  placeholder='Occupation'
-                  value={occupation}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className='field'>
-                <input
-                  type='text'
-                  name='score'
-                  style={{ width: 400 }}
-                  placeholder='Score'
-                  value={score}
-                  onChange={handleChange}
-                />
-              </div>
-              <button className='ui submit button' type='submit'>
-                Submit
-              </button>
-            </form>
+        <Form className='score-form' onSubmit={handleSubmit}>
+          <Form.Field className='score-input'>
+            <label>Name</label>
+            <input placeholder='Name' />
+          </Form.Field>
+          <Form.Field className='score-input'>
+            <label>Age</label>
+            <input placeholder='Age' />
+          </Form.Field>
+          <Form.Field className='score-input'>
+            <label>Occupation</label>
+            <input placeholder='Occupation' />
+          </Form.Field>
+          <Form.Field className='score-input'>
+            <label>Score</label>
+            <input placeholder='Score' />
+          </Form.Field>
+          <Button type='submit'>Submit</Button>
+        </Form>
+
+        <form onSubmit={handleSubmit}>
+          <div className='field'>
+            <input
+              type='text'
+              name='name'
+              style={{ width: 400 }}
+              placeholder='Name'
+              value={name}
+              onChange={handleChange}
+            />
           </div>
-        </div>
+          <div className='field'>
+            <input
+              type='text'
+              name='age'
+              style={{ width: 400 }}
+              placeholder='Age'
+              value={age}
+              onChange={handleChange}
+            />
+          </div>
+          <div className='field'>
+            <input
+              type='text'
+              name='occupation'
+              style={{ width: 400 }}
+              placeholder='Occupation'
+              value={occupation}
+              onChange={handleChange}
+            />
+          </div>
+          <div className='field'>
+            <input
+              type='text'
+              name='score'
+              style={{ width: 400 }}
+              placeholder='Score'
+              value={score}
+              onChange={handleChange}
+            />
+          </div>
+          <button className='ui submit button' type='submit'>
+            Submit
+          </button>
+        </form>
       </div>
     );
   }

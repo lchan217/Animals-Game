@@ -1,0 +1,10 @@
+.score-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-input {
+  width: 30em;
+}
