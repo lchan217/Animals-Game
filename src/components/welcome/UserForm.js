@@ -36,38 +36,19 @@ class UserForm extends React.Component {
 
     return (
       <div className='score-form-background'>
+        <h1 className='form-header'>Please enter your details: </h1>
         <Form className='score-form' onSubmit={handleSubmit}>
-          <Form.Input
-            className='score-input'
-            value={name}
-            onChange={handleChange}
-          >
-            <label>Name</label>
-            <input placeholder='Name' />
+          <Form.Input value={name} onChange={handleChange}>
+            <input className='score-input' placeholder='Name' />
           </Form.Input>
-          <Form.Input
-            className='score-input'
-            value={age}
-            onChange={handleChange}
-          >
-            <label>Age</label>
-            <input placeholder='Age' />
+          <Form.Input value={age} onChange={handleChange}>
+            <input className='score-input' placeholder='Age' />
           </Form.Input>
-          <Form.Input
-            className='score-input'
-            value={occupation}
-            onChange={handleChange}
-          >
-            <label>Occupation</label>
-            <input placeholder='Occupation' />
+          <Form.Input value={occupation} onChange={handleChange}>
+            <input className='score-input' placeholder='Occupation' />
           </Form.Input>
-          <Form.Input
-            className='score-input'
-            value={score}
-            onChange={handleChange}
-          >
-            <label>Score</label>
-            <input placeholder='Score' />
+          <Form.Input value={score} onChange={handleChange}>
+            <input className='score-input' placeholder='Score' />
           </Form.Input>
           <Button type='submit'>Submit</Button>
         </Form>

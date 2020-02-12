@@ -6,7 +6,7 @@ import "../css/NavBar.css";
 const NavBar = () => {
   return (
     <div className='navBar'>
-      <Menu widths={5}>
+      <Menu widths={5} fixed='true'>
         <Menu.Item>
           <Link to='/'>Instructions</Link>
         </Menu.Item>
