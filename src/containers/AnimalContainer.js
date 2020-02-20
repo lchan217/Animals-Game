@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAnimals } from "../actions/animalActions.js";
+import { fetchAnimals, fetchGoals } from "../actions/animalActions.js";
 import AnimalCard from "../components/animals/AnimalCard";
 import Timer from "../components/animals/Timer";
 import { Card } from "semantic-ui-react";
@@ -8,6 +8,7 @@ import { Card } from "semantic-ui-react";
 class AnimalContainer extends Component {
   componentDidMount() {
     this.props.fetchAnimals();
+    this.props.fetchGoals();
   }
   // =================================================showlists=================================================================
   showAnimalCard() {
@@ -16,7 +17,7 @@ class AnimalContainer extends Component {
         return a.id - b.id;
       });
       return (
-        <Card.Group classname='animal-cards'>
+        <Card.Group className='animal-cards'>
           {all.map((animal, index) => (
             <AnimalCard key={index} {...animal} />
           ))}
@@ -61,4 +62,6 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchAnimals })(AnimalContainer);
+export default connect(mapStateToProps, { fetchAnimals, fetchGoals })(
+  AnimalContainer
+);
