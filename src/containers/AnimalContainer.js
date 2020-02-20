@@ -58,7 +58,8 @@ class AnimalContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    animals: state.animals
+    animals: state.animals,
+    goals: state.goals
   };
 };
 

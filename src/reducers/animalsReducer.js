@@ -6,9 +6,6 @@ export default function animalsReducer(state = [], action) {
     case "FETCH_ANIMALS":
       return action.payload;
 
-    case "FETCH_GOALS":
-      return action.payload;
-
     case "NURSING_TO_WILD":
       const nursingToWild = [...state];
       const nursingToWildResult = nursingToWild.map(animal => {
