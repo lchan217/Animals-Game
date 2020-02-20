@@ -18,16 +18,21 @@ class AnimalContainer extends Component {
     }
   };
 
-  saveThree = () => {
-    if (this.props.animals.length > 0) {
+  matchThree = () => {
+    if (this.props.animals.length > 0 && this.props.goals.length > 0) {
       const saved = this.props.animals.filter(
         animal => animal.status === "Wild"
       );
+      const savedNames = [];
+      const goalNames = [];
+      saved.map(savedAnimal => savedNames.push(savedAnimal.name));
+
+      this.props.goals.map(goal => goalNames.push(goal.name));
+
       if (saved.length === 3) {
-        alert(
-          "Congrats, you saved three animals! Don't forget to stop the timer!"
-        );
-        this.props.animals.map(animal => (animal.status = "Endangered"));
+        // alert(
+        //   "Congrats, you saved three animals! Don't forget to stop the timer!"
+        // );
       }
     }
   };
@@ -53,8 +58,7 @@ class AnimalContainer extends Component {
         <Timer />
         <h4>Capture, nurse, and release these animals in order to win!</h4>
         <ol>{this.showGoals()}</ol>
-        <br></br>
-        {this.saveThree()}
+        {this.matchThree()}
         {this.showAnimalCard()}
       </div>
     );
