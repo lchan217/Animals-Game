@@ -33,7 +33,7 @@ class Timer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='timer'>
         <b>Timer: {this.state.time} </b>
         <Button
           color='red'
