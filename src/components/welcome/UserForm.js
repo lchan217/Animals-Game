@@ -39,16 +39,20 @@ class UserForm extends React.Component {
         <h1 className='form-header'>Please enter your details: </h1>
         <Form className='score-form' onSubmit={handleSubmit}>
           <Form.Input value={name} onChange={handleChange}>
-            <input className='score-input' placeholder='Name' />
+            <input className='score-input' placeholder='Name' name='name' />
           </Form.Input>
           <Form.Input value={age} onChange={handleChange}>
-            <input className='score-input' placeholder='Age' />
+            <input className='score-input' placeholder='Age' name='age' />
           </Form.Input>
           <Form.Input value={occupation} onChange={handleChange}>
-            <input className='score-input' placeholder='Occupation' />
+            <input
+              className='score-input'
+              placeholder='Occupation'
+              name='occupation'
+            />
           </Form.Input>
           <Form.Input value={score} onChange={handleChange}>
-            <input className='score-input' placeholder='Score' />
+            <input className='score-input' placeholder='Score' name='score' />
           </Form.Input>
           <Button type='submit'>Submit</Button>
         </Form>
