@@ -26,6 +26,6 @@ export const addUser = user => {
       .then(resp => resp.json())
       .then(user => console.log(user))
       .then(user => dispatch({ type: "ADD_USER", user }));
-    alert(`Thanks for playing, ${user.name}!`)``;
+    window.location.href = "/users/highscores";
   };
 };
