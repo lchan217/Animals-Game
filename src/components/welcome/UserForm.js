@@ -20,7 +20,6 @@ class UserForm extends React.Component {
   };
 
   handleSubmit = event => {
-    debugger;
     event.preventDefault();
     this.props.addUser(this.state);
     this.setState({
