@@ -29,3 +29,18 @@
 .timer {
   padding-top: 4em;
 }
+
+@media screen and (max-width: 400px) {
+  .alert-new-game {
+    width: 6em;
+  }
+  .game-over-alert-text {
+    font-size: 1em;
+  }
+
+  .game-over-alert {
+    left: 20%;
+    right: 20%;
+    bottom: auto;
+  }
+}

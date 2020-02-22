@@ -20,3 +20,18 @@
   margin-left: 35% !important;
   margin-right: 35% !important;
 }
+
+@media screen and (max-width: 400px) {
+  .new-game-button {
+    width: 40%;
+    height: 30px;
+    margin-left: 35% !important;
+    margin-right: 35% !important;
+    font-size: 0.5em !important;
+  }
+
+  .instructions {
+    font-size: 1.6em;
+    text-shadow: black 0px 0px 10px;
+  }
+}
