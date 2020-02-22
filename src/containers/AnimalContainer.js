@@ -30,9 +30,23 @@ class AnimalContainer extends Component {
       this.props.goals.map(goal => goalNames.push(goal.name));
 
       if (saved.length === 3) {
-        // alert(
-        //   "Congrats, you saved three animals! Don't forget to stop the timer!"
-        // );
+        let sortedA = savedNames.sort();
+        let sortedB = goalNames.sort();
+        let success = [];
+        for (let i = 0; i < sortedA.length; i++) {
+          if (sortedA[i] !== sortedB[i]) {
+            success.push(0);
+          } else {
+            success.push(1);
+          }
+        }
+        success.every(currentValue => currentValue)
+          ? alert(
+              "Congrats, you saved three animals! Don't forget to stop the timer!"
+            )
+          : alert(
+              "Please start a new game. Don't forget to save the right animals!"
+            );
       }
     }
   };
