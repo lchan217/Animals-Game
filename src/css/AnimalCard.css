@@ -2,3 +2,9 @@
   height: 28em;
   object-fit: cover;
 }
+
+.animal-card {
+  object-fit: cover;
+  height: 40em;
+  width: 20em !important;
+}

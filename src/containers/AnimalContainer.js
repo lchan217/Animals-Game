@@ -4,7 +4,8 @@ import { fetchAnimals } from "../actions/animalActions.js";
 import { fetchGoals } from "../actions/goalActions.js";
 import AnimalCard from "../components/animals/AnimalCard";
 import Timer from "../components/animals/Timer";
-import { Card } from "semantic-ui-react";
+import { Card, Container } from "semantic-ui-react";
+import "../css/AnimalContainer.css";
 
 class AnimalContainer extends Component {
   componentDidMount() {
@@ -68,13 +69,13 @@ class AnimalContainer extends Component {
 
   render() {
     return (
-      <div>
+      <Container className='animal-container'>
         <Timer />
         <h4>Capture, nurse, and release these animals in order to win!</h4>
         <ol>{this.showGoals()}</ol>
         {this.matchThree()}
         {this.showAnimalCard()}
-      </div>
+      </Container>
     );
   }
 }
