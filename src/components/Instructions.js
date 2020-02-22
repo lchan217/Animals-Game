@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Instructions.css";
+import { Button } from "semantic-ui-react";
 
 const Instructions = () => {
   return (
@@ -14,6 +15,14 @@ const Instructions = () => {
           into the wild. Your timer will start immediately. Don't forget to
           record your score afterwards, maybe you will be an expert! Good luck!
         </p>
+        <Button
+          onClick={() => {
+            window.location.href = "/animals";
+          }}
+          className='new-game-button center'
+        >
+          New Game
+        </Button>
       </div>
     </div>
   );
