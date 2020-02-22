@@ -1,7 +1,29 @@
 .game-over-alert {
-  color: red;
-  font-size: 2em;
-  text-align: center;
+  /* keeps box on top of everything else */
+  position: absolute;
+  z-index: 1;
+
+  /* placement of box*/
+  left: 30%;
+  right: 30%;
+  bottom: auto;
+
+  background: rgb(240, 240, 240);
+  padding: 2em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-over-alert-text {
+  font-size: 1.35em;
+  color: rgb(203, 59, 51);
+  align-self: center;
+}
+.alert-new-game {
+  width: 14em;
+  align-self: center;
 }
 
 .timer {

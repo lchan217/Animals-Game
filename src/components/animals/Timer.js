@@ -23,9 +23,21 @@ class Timer extends React.Component {
     if (this.state.showAlert) {
       return (
         <div className='game-over-alert'>
+          <div className='game-over-alert-text'>
+            <Icon name='exclamation triangle icon'></Icon>
+            Remember to record your score! No cheating!
+          </div>
           <br />
-          <Icon name='exclamation triangle icon'></Icon>
-          Remember to record your score! No cheating!
+          <Button
+            onClick={() => {
+              window.location.reload();
+            }}
+            color='red'
+            size='mini'
+            className='alert-new-game'
+          >
+            New Game
+          </Button>
         </div>
       );
     }
