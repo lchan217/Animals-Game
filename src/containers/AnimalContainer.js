@@ -4,7 +4,7 @@ import { fetchAnimals } from "../actions/animalActions.js";
 import { fetchGoals } from "../actions/goalActions.js";
 import AnimalCard from "../components/animals/AnimalCard";
 import Timer from "../components/animals/Timer";
-import { Card, Container } from "semantic-ui-react";
+import { Card, Container, Button, Icon } from "semantic-ui-react";
 import "../css/AnimalContainer.css";
 
 class AnimalContainer extends Component {
@@ -41,13 +41,34 @@ class AnimalContainer extends Component {
             success.push(1);
           }
         }
-        success.every(currentValue => currentValue)
-          ? alert(
-              "Congrats, you saved three animals! Don't forget to stop the timer!"
-            )
-          : alert(
-              "Please start a new game. Don't forget to save the right animals!"
-            );
+        return success.every(currentValue => currentValue) ? (
+          <div className='game-over-alert'>
+            <div className='game-over-alert-text'>
+              <Icon name='check circle outline' color='green'></Icon>
+              <h3>Congrats, you saved three animals!</h3>
+              Remember to stop the time and record your time as your score on
+              the next tab! No cheating!
+            </div>
+          </div>
+        ) : (
+          <div className='game-over-alert'>
+            <div className='game-over-alert-text'>
+              <Icon name='exclamation triangle'></Icon>Don't forget to save the
+              right animals! Please start a new game.
+            </div>
+            <br /> <br />
+            <Button
+              onClick={() => {
+                window.location.reload();
+              }}
+              color='red'
+              size='mini'
+              className='alert-new-game'
+            >
+              New Game
+            </Button>
+          </div>
+        );
       }
     }
   };
