@@ -44,10 +44,14 @@ class AnimalContainer extends Component {
         return success.every(currentValue => currentValue) ? (
           <div className='game-over-alert'>
             <div className='game-over-alert-text'>
-              <Icon name='check circle outline' color='green'></Icon>
-              <h3>Congrats, you saved three animals!</h3>
-              Remember to stop the time and record your time as your score on
-              the next tab! No cheating!
+              <Icon name='check circle outline' size='large' color='green'>
+                {" "}
+                <h3>Congrats, you saved three animals!</h3>
+              </Icon>
+              <p className='success-paragraph'>
+                Remember to stop the time and record your time as your score on
+                the next tab! No cheating!
+              </p>
             </div>
           </div>
         ) : (

@@ -16,8 +16,19 @@
   flex-direction: column;
   justify-content: center;
 
-  position: relative;
+  /* position: relative; */
   z-index: 1;
+  position: sticky;
+  top: 4em;
+}
+
+i.green.check.circle.outline.large.icon {
+  width: 90%;
+}
+
+.success-paragraph {
+  padding-top: 1.3em;
+  font-size: 0.7em;
 }
 
 .game-over-alert-text {
