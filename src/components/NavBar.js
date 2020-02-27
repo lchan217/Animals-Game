@@ -11,7 +11,7 @@ const NavBar = () => {
           <Link to='/'>Instructions</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to='/animals'>All Animals</Link>
+          <Link to='/animals'>Play Game</Link>
         </Menu.Item>
         <Menu.Item>
           <Link to='/data'>Record Score</Link>

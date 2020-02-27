@@ -32,6 +32,16 @@ class Timer extends React.Component {
         >
           Stop
         </Button>
+        <Button
+          onClick={() => {
+            window.location.reload();
+          }}
+          color='red'
+          size='mini'
+          className='alert-new-game'
+        >
+          New Game
+        </Button>
       </div>
     );
   }

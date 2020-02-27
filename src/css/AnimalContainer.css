@@ -49,9 +49,14 @@ i.green.check.circle.outline.large.icon {
     font-size: 1em;
   }
 
+  .success-paragraph {
+    padding-top: 10em;
+  }
+
   .game-over-alert {
     left: 20%;
     right: 20%;
     bottom: auto;
+    padding: 1.5em;
   }
 }
