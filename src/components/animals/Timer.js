@@ -24,15 +24,6 @@ class Timer extends React.Component {
       <div className='timer'>
         <b>Timer: {this.state.time} </b>
         <Button
-          color='red'
-          size='mini'
-          onClick={() => {
-            this.stopClock();
-          }}
-        >
-          Stop
-        </Button>
-        <Button
           onClick={() => {
             window.location.reload();
           }}
