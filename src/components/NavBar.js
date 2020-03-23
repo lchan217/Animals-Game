@@ -6,21 +6,21 @@ import "../css/NavBar.css";
 const NavBar = () => {
   return (
     <div className='navBar'>
-      <Menu widths={5} fixed='true'>
+      <Menu widths={3} fixed='true'>
         <Menu.Item>
           <Link to='/'>Instructions</Link>
         </Menu.Item>
         <Menu.Item>
           <Link to='/animals'>Play Game</Link>
         </Menu.Item>
-        <Menu.Item>
+        {/* <Menu.Item>
           <Link to='/data'>Record Score</Link>
-        </Menu.Item>
-        <Menu.Item>
+        </Menu.Item> */}
+        {/* <Menu.Item>
           <Link to='/users/highscores'>High Scores</Link>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item>
-          <Link to='/users/cards'>All Scores</Link>
+          <Link to='/users/cards'>Scores</Link>
         </Menu.Item>
       </Menu>
     </div>
