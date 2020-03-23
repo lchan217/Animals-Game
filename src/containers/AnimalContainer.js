@@ -47,11 +47,16 @@ class AnimalContainer extends Component {
               <Icon name='check circle outline' size='large' color='green'>
                 {" "}
                 <h3>Congrats, you saved three animals!</h3>
-              </Icon>
-              <p className='success-paragraph'>
-                Remember to stop the time and record your time as your score on
-                the next tab! No cheating!
-              </p>
+              </Icon>{" "}
+              <Button
+                onClick={() => {
+                  window.location.href = "/users/scores";
+                }}
+                color='red'
+                className='alert-to-scores'
+              >
+                To Scores
+              </Button>
             </div>
           </div>
         ) : (
