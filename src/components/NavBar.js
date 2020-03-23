@@ -20,7 +20,7 @@ const NavBar = () => {
           <Link to='/users/highscores'>High Scores</Link>
         </Menu.Item> */}
         <Menu.Item>
-          <Link to='/users/cards'>Scores</Link>
+          <Link to='/users/scores'>Scores</Link>
         </Menu.Item>
       </Menu>
     </div>
