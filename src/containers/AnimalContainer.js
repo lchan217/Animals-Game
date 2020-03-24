@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAnimals } from "../actions/animalActions.js";
 import { fetchGoals } from "../actions/goalActions.js";
+import { addScore } from "../actions/userActions.js";
 import AnimalCard from "../components/animals/AnimalCard";
 import { Card, Container, Button, Icon } from "semantic-ui-react";
 import "../css/AnimalContainer.css";
@@ -50,6 +51,7 @@ class AnimalContainer extends Component {
           } else {
             success.push(1);
             this.stopClock();
+            this.props.addScore(this.state.time);
           }
         }
         return success.every(currentValue => currentValue) ? (
@@ -156,6 +158,6 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchAnimals, fetchGoals })(
+export default connect(mapStateToProps, { fetchAnimals, fetchGoals, addScore })(
   AnimalContainer
 );

@@ -25,6 +25,23 @@ export const addUser = user => {
       .then(resp => resp.json())
       .then(user => console.log(user))
       .then(user => dispatch({ type: "ADD_USER", user }));
-    window.location.href = "/users/highscores";
+  };
+};
+
+export const addScore = score => {
+  return dispatch => {
+    const body = {
+      time: score
+    };
+    fetch("https://animals-game-api.herokuapp.com/api/users", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(body)
+    })
+      .then(resp => resp.json())
+      .then(user => console.log("updated:" + user));
   };
 };
