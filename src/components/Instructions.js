@@ -17,7 +17,7 @@ const Instructions = () => {
         </p>
         <Button
           onClick={() => {
-            window.location.href = "/animals";
+            window.location.href = "/form";
           }}
           className='new-game-button center'
         >

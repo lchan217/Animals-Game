@@ -10,8 +10,7 @@ class UserForm extends React.Component {
     this.state = {
       name: "",
       age: "",
-      occupation: "",
-      score: ""
+      occupation: ""
     };
   }
 
@@ -25,12 +24,12 @@ class UserForm extends React.Component {
     this.setState({
       name: "",
       age: "",
-      occupation: "",
-      score: ""
+      occupation: ""
     });
+    window.location.href = "/animals";
   };
   render() {
-    const { name, age, occupation, score } = this.state;
+    const { name, age, occupation } = this.state;
     const { handleChange, handleSubmit } = this;
 
     return (
@@ -49,9 +48,6 @@ class UserForm extends React.Component {
               placeholder='Occupation'
               name='occupation'
             />
-          </Form.Input>
-          <Form.Input value={score} onChange={handleChange}>
-            <input className='score-input' placeholder='Score' name='score' />
           </Form.Input>
           <Button type='submit'>Submit</Button>
         </Form>

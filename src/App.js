@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div>
         <NavBar />
-        <Route exact path='/data' component={UserForm} />
+        <Route exact path='/form' component={UserForm} />
         <Route exact path='/' component={Instructions} />
         <Route exact path='/animals' component={AnimalContainer} />
         <Route exact path='/users/scores' component={UserContainer} />

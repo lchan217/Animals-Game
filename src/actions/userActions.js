@@ -12,8 +12,7 @@ export const addUser = user => {
     const body = {
       name: user.name,
       age: user.age,
-      occupation: user.occupation,
-      score: user.score
+      occupation: user.occupation
     };
     fetch("https://animals-game-api.herokuapp.com/api/users", {
       method: "POST",
