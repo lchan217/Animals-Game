@@ -3,14 +3,24 @@ import { connect } from "react-redux";
 import { fetchAnimals } from "../actions/animalActions.js";
 import { fetchGoals } from "../actions/goalActions.js";
 import AnimalCard from "../components/animals/AnimalCard";
-import Timer from "../components/animals/Timer";
 import { Card, Container, Button, Icon } from "semantic-ui-react";
 import "../css/AnimalContainer.css";
 
 class AnimalContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      time: 0
+    };
+  }
   componentDidMount() {
     this.props.fetchAnimals();
     this.props.fetchGoals();
+    this.interval = setInterval(this.startClock, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
   // =================================================showlists=================================================================
   showGoals = () => {
@@ -37,8 +47,10 @@ class AnimalContainer extends Component {
         for (let i = 0; i < sortedA.length; i++) {
           if (sortedA[i] !== sortedB[i]) {
             success.push(0);
+            this.stopClock();
           } else {
             success.push(1);
+            this.stopClock();
           }
         }
         return success.every(currentValue => currentValue) ? (
@@ -97,10 +109,28 @@ class AnimalContainer extends Component {
     }
   };
 
+  showTimer = () => {
+    return (
+      <div className='timer'>
+        <b>Timer: {this.state.time} </b>
+        <Button
+          onClick={() => {
+            window.location.reload();
+          }}
+          color='red'
+          size='mini'
+          className='alert-new-game'
+        >
+          New Game
+        </Button>
+      </div>
+    );
+  };
+
   render() {
     return (
       <Container className='animal-container'>
-        <Timer />
+        {this.showTimer()}
         <h4>Capture, nurse, and release these animals in order to win!</h4>
         <ol>{this.showGoals()}</ol>
         {this.matchThree()}
@@ -108,6 +138,16 @@ class AnimalContainer extends Component {
       </Container>
     );
   }
+
+  startClock = () => {
+    this.setState(prevState => ({
+      time: prevState.time + 1
+    }));
+  };
+
+  stopClock = () => {
+    clearInterval(this.interval);
+  };
 }
 
 const mapStateToProps = state => {
