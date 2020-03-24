@@ -47,7 +47,6 @@ class AnimalContainer extends Component {
         for (let i = 0; i < sortedA.length; i++) {
           if (sortedA[i] !== sortedB[i]) {
             success.push(0);
-            this.stopClock();
           } else {
             success.push(1);
             this.stopClock();
