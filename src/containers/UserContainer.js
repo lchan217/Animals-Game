@@ -29,7 +29,7 @@ class UserContainer extends Component {
     //   );
     // }
     if (this.props.users.length > 0) {
-      this.props.users.sort((a, b) => a.name.localeCompare(b.name));
+      this.props.users.sort((a, b) => a.score - b.score);
       return (
         <div>
           <h2>User Cards</h2>
