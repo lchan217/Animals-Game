@@ -1,4 +1,8 @@
-.high-scores-wrapper {
+.score-list {
+  padding: 4em;
+}
+
+/* .high-scores-wrapper {
   padding: 1.5em;
 }
 
@@ -15,4 +19,4 @@
   .high-scores-background {
     font-size: 1.2em;
   }
-}
+} */
