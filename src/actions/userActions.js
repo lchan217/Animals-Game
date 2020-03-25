@@ -15,6 +15,7 @@ export const addUser = user => {
       occupation: user.occupation
     };
     fetch("https://animals-game-api.herokuapp.com/api/users", {
+      // fetch("http://localhost:3001/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,6 +35,7 @@ export const addScore = score => {
       time: score
     };
     fetch("https://animals-game-api.herokuapp.com/api/users", {
+      // fetch("http://localhost:3001/api/users", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
