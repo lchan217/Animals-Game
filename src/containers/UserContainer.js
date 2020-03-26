@@ -4,6 +4,7 @@ import { fetchUsers } from "../actions/userActions.js";
 // import HighScores from "../components/welcome/HighScores";
 import ScoreList from "../components/welcome/ScoreList";
 import "../css/UserContainer.css";
+import { Item } from "semantic-ui-react";
 
 class UserContainer extends Component {
   componentDidMount() {
@@ -32,11 +33,12 @@ class UserContainer extends Component {
       return (
         <div className='score-list'>
           <h2 className='score-header'>User Scores</h2>
-          <ol>
-            {this.props.users.map((user, index) => (
+
+          {this.props.users.map((user, index) => (
+            <Item.Group>
               <ScoreList key={index} {...user} />
-            ))}
-          </ol>
+            </Item.Group>
+          ))}
         </div>
       );
     }
