@@ -31,7 +31,7 @@ class UserContainer extends Component {
       this.props.users.sort((a, b) => a.score - b.score);
       return (
         <div className='score-list'>
-          <h2>User Cards</h2>
+          <h2 className='score-header'>User Scores</h2>
           <ol>
             {this.props.users.map((user, index) => (
               <ScoreList key={index} {...user} />
