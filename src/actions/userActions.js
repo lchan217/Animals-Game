@@ -24,7 +24,6 @@ export const addUser = user => {
       body: JSON.stringify(body)
     })
       .then(resp => resp.json())
-      .then(user => console.log(user))
       .then(user => dispatch({ type: "ADD_USER", user }));
   };
 };
@@ -42,8 +41,6 @@ export const addScore = score => {
         Accept: "application/json"
       },
       body: JSON.stringify(body)
-    })
-      .then(resp => resp.json())
-      .then(user => console.log("updated:" + user));
+    }).then(resp => resp.json());
   };
 };
