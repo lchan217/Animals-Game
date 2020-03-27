@@ -1,20 +1,22 @@
 import React from "react";
-import { Item } from "semantic-ui-react";
 import "../../css/ScoreList.css";
 import Moment from "react-moment";
 
-const ScoreList = ({ name, age, occupation, score, created_at }) => {
+const ScoreList = ({ rank, name, age, occupation, score, created_at }) => {
   return (
-    <Item>
-      <Item.Content className='score-content'>
-        <Item.Header>
-          {name} | Score: {score} <br />
-        </Item.Header>
-        <Item.Description>
-          <Moment date={created_at} format='l' />
-        </Item.Description>
-      </Item.Content>
-    </Item>
+    <div className='score-card'>
+      <div className='score-content'>
+        {rank + 1}. {name} | Score: {score}
+      </div>
+      <div className='score-date'>
+        {" "}
+        Date: <Moment date={created_at} format='l' />
+        <br />
+        Occupation: {occupation}
+        <br />
+        Age: {age}
+      </div>
+    </div>
   );
 };
 
