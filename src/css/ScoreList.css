@@ -3,6 +3,8 @@
   width: 30%;
   margin: 2em;
   padding: 1em;
+  background-color: white;
+  align-self: center;
 }
 
 .score-card:hover {

@@ -30,12 +30,13 @@ class UserContainer extends Component {
     if (this.props.users.length > 0) {
       this.props.users.sort((a, b) => a.score - b.score);
       return (
-        <div className='score-list'>
-          <h2 className='score-header'>User Scores</h2>
-
-          {this.props.users.map((user, index) => (
-            <ScoreList key={index} {...user} rank={index} />
-          ))}
+        <div className='score-list-wrapper'>
+          <div className='score-list-container'>
+            <h1 className='score-header'>User Scores</h1>
+            {this.props.users.map((user, index) => (
+              <ScoreList key={index} {...user} rank={index} />
+            ))}
+          </div>
         </div>
       );
     }
