@@ -116,7 +116,7 @@ class AnimalContainer extends Component {
         <b>Timer: {this.state.time} </b>
         <Button
           onClick={() => {
-            window.location.reload();
+            window.location.href = "/form";
           }}
           color='red'
           size='mini'
