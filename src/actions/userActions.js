@@ -1,7 +1,8 @@
 export const fetchUsers = () => {
   return dispatch => {
     dispatch({ type: "LOADING_USERS" });
-    return fetch("https://animals-game-api.herokuapp.com/api/users")
+    // return fetch("https://animals-game-api.herokuapp.com/api/users")
+    return fetch("http://localhost:3001/api/users")
       .then(response => response.json())
       .then(users => dispatch({ type: "FETCH_USERS", payload: users }));
   };
@@ -14,8 +15,8 @@ export const addUser = user => {
       age: user.age,
       occupation: user.occupation
     };
-    fetch("https://animals-game-api.herokuapp.com/api/users", {
-      // fetch("http://localhost:3001/api/users", {
+    // fetch("https://animals-game-api.herokuapp.com/api/users", {
+    fetch("http://localhost:3001/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,8 +34,8 @@ export const addScore = score => {
     const body = {
       time: score
     };
-    fetch("https://animals-game-api.herokuapp.com/api/users", {
-      // fetch("http://localhost:3001/api/users", {
+    // fetch("https://animals-game-api.herokuapp.com/api/users", {
+    fetch("http://localhost:3001/api/users", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

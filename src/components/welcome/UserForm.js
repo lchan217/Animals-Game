@@ -20,13 +20,17 @@ class UserForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.addUser(this.state);
-    this.setState({
-      name: "",
-      age: "",
-      occupation: ""
-    });
-    window.location.href = "/animals";
+    if (this.state.name !== "") {
+      this.props.addUser(this.state);
+      this.setState({
+        name: "",
+        age: "",
+        occupation: ""
+      });
+      window.location.href = "/animals";
+    } else {
+      alert("Don't forget to add your name!");
+    }
   };
   render() {
     const { name, age, occupation } = this.state;
