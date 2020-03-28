@@ -12,8 +12,7 @@ const Instructions = () => {
           Unfortunately, only three can be saved per game. Capture the three
           animals listed at the top of the page and nurse them back to health.
           Once they have 5 health points, they are ready to be released back
-          into the wild. Your timer will start immediately. Don't forget to
-          record your score afterwards, maybe you will be an expert! Good luck!
+          into the wild. Your timer will start immediately. Good luck!
         </p>
         <Button
           onClick={() => {
