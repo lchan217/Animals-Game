@@ -1,22 +1,3 @@
-/* .high-scores-wrapper {
-  padding: 1.5em;
-}
-
-.high-scores-background {
-  font-size: 1.5em;
-  width: 100%;
-  height: 800px;
-  padding: 40px;
-  background-image: url("https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
-  background-size: cover;
-}
-
-@media screen and (max-width: 590px) {
-  .high-scores-background {
-    font-size: 1.2em;
-  }
-} */
-
 .score-list-container {
   padding-top: 5em;
   display: flex;
@@ -32,4 +13,8 @@
   font-size: 3em;
   text-align: center;
   color: white;
+}
+
+.new-game-scores {
+  text-align: center;
 }

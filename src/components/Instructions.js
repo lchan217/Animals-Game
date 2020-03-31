@@ -14,7 +14,9 @@ const Instructions = () => {
           Once they have 5 health points, they are ready to be released back
           into the wild. Your timer will start immediately. Good luck!
         </p>
-        <NewButton />
+        <div className='intro-button'>
+          <NewButton />
+        </div>
       </div>
     </div>
   );

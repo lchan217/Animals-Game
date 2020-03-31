@@ -34,7 +34,9 @@ class UserContainer extends Component {
         <div className='score-list-wrapper'>
           <div className='score-list-container'>
             <h1 className='score-header'>User Scores</h1>
-            <NewButton />
+            <div className='new-game-scores'>
+              <NewButton />
+            </div>
             {this.props.users.map((user, index) => (
               <ScoreList key={index} {...user} rank={index} />
             ))}

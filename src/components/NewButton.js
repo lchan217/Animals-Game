@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
+import "../css/NewButton.css";
 
 const NewButton = () => {
   return (
@@ -9,8 +10,7 @@ const NewButton = () => {
           window.location.href = "/form";
         }}
         color='red'
-        size='mini'
-        className='alert-new-game'
+        className='new-button'
       >
         New Game
       </Button>

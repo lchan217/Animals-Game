@@ -106,6 +106,8 @@ class AnimalContainer extends Component {
     return (
       <div className='timer'>
         <b>Timer: {this.state.time} </b>
+
+        <br />
         <NewButton />
       </div>
     );
