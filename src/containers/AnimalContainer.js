@@ -6,6 +6,7 @@ import { addScore } from "../actions/userActions.js";
 import AnimalCard from "../components/animals/AnimalCard";
 import { Card, Container, Button, Icon } from "semantic-ui-react";
 import "../css/AnimalContainer.css";
+import NewButton from "../components/NewButton";
 
 class AnimalContainer extends Component {
   constructor() {
@@ -79,16 +80,7 @@ class AnimalContainer extends Component {
               right animals! Please start a new game.
             </div>
             <br /> <br />
-            <Button
-              onClick={() => {
-                window.location.reload();
-              }}
-              color='red'
-              size='mini'
-              className='alert-new-game'
-            >
-              New Game
-            </Button>
+            <NewButton />
           </div>
         );
       }
@@ -114,16 +106,7 @@ class AnimalContainer extends Component {
     return (
       <div className='timer'>
         <b>Timer: {this.state.time} </b>
-        <Button
-          onClick={() => {
-            window.location.href = "/form";
-          }}
-          color='red'
-          size='mini'
-          className='alert-new-game'
-        >
-          New Game
-        </Button>
+        <NewButton />
       </div>
     );
   };

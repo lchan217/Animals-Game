@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Instructions.css";
-import { Button } from "semantic-ui-react";
+import NewButton from "../components/NewButton";
 
 const Instructions = () => {
   return (
@@ -14,14 +14,7 @@ const Instructions = () => {
           Once they have 5 health points, they are ready to be released back
           into the wild. Your timer will start immediately. Good luck!
         </p>
-        <Button
-          onClick={() => {
-            window.location.href = "/form";
-          }}
-          className='new-game-button center'
-        >
-          New Game
-        </Button>
+        <NewButton />
       </div>
     </div>
   );

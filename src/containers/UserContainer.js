@@ -4,6 +4,7 @@ import { fetchUsers } from "../actions/userActions.js";
 // import HighScores from "../components/welcome/HighScores";
 import ScoreList from "../components/welcome/ScoreList";
 import "../css/UserContainer.css";
+import NewButton from "../components/NewButton.js";
 
 class UserContainer extends Component {
   componentDidMount() {
@@ -33,6 +34,7 @@ class UserContainer extends Component {
         <div className='score-list-wrapper'>
           <div className='score-list-container'>
             <h1 className='score-header'>User Scores</h1>
+            <NewButton />
             {this.props.users.map((user, index) => (
               <ScoreList key={index} {...user} rank={index} />
             ))}
