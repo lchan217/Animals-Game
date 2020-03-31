@@ -35,7 +35,9 @@ export default function animalsReducer(state = [], action) {
     case "NURSE":
       const currentHealth = [...state];
       const increasedHealth = currentHealth.map(animal => {
-        if (animal.id === action.id && animal.status === "Nursing") {
+        if (animal.id === action.id && animal.status === "Endangered") {
+          alert("Need to capture your animal first!");
+        } else if (animal.id === action.id && animal.status === "Nursing") {
           if (animal.health < 5) {
             animal.health++;
           } else {
