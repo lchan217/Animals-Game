@@ -143,6 +143,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchAnimals, fetchGoals, addScore })(
-  AnimalContainer
-);
+export default connect(mapStateToProps, {
+  fetchAnimals,
+  fetchGoals,
+  addScore
+})(AnimalContainer);
