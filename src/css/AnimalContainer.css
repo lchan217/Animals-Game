@@ -30,10 +30,6 @@ i.green.check.circle.outline.large.icon {
   color: rgb(203, 59, 51);
   align-self: center;
 }
-.alert-new-game {
-  width: 14em;
-  align-self: center;
-}
 
 button.ui.red.button.alert-to-scores {
   margin-left: 30%;
@@ -41,15 +37,8 @@ button.ui.red.button.alert-to-scores {
 }
 
 @media screen and (max-width: 400px) {
-  .alert-new-game {
-    width: 6em;
-  }
   .game-over-alert-text {
-    font-size: 1em;
-  }
-
-  .success-paragraph {
-    padding-top: 10em;
+    font-size: 1.4em;
   }
 
   .game-over-alert {
@@ -57,5 +46,11 @@ button.ui.red.button.alert-to-scores {
     right: 20%;
     bottom: auto;
     padding: 1.5em;
+    width: 12em;
+  }
+
+  button.ui.red.button.alert-to-scores {
+    margin-top: 6em;
+    margin-left: 10%;
   }
 }

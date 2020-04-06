@@ -22,3 +22,9 @@
   padding-top: 0.5em;
   font-size: 1.2em;
 }
+
+@media screen and (max-width: 400px) {
+  .score-card {
+    width: 60%;
+  }
+}
