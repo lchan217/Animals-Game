@@ -10,6 +10,10 @@ export default function usersReducer(state = [], action) {
       const newState = [...state, action.user];
       return newState;
 
+    case "ADD_SCORE":
+      const newState2 = [...state, action.user];
+      return newState2;
+
     default:
       return state;
   }
