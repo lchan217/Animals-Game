@@ -41,17 +41,14 @@ class AnimalContainer extends Component {
       saved.map((savedAnimal) => savedNames.push(savedAnimal.name));
 
       this.props.goals.map((goal) => goalNames.push(goal.name));
-
       if (saved.length === 3) {
         let sortedA = savedNames.sort();
         let sortedB = goalNames.sort();
         let success = [];
         for (let i = 0; i < sortedA.length; i++) {
           if (sortedA[i] !== sortedB[i]) {
-            debugger;
             success.push(0);
           } else {
-            debugger;
             success.push(1);
             this.stopClock();
             this.props.addScore(this.state.time);
@@ -99,7 +96,7 @@ class AnimalContainer extends Component {
 
   showAnimalCard = () => {
     if (this.props.animals.length > 0) {
-      const all = this.props.animals.sort(function (a, b) {
+      const all = this.props.animals.sort(function(a, b) {
         return a.id - b.id;
       });
       return (

@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { addUser } from "../../actions/userActions.js";
 import { Form, Button } from "semantic-ui-react";
 import "../../css/UserForm.css";
@@ -10,32 +11,35 @@ class UserForm extends React.Component {
     this.state = {
       name: "",
       age: "",
-      occupation: ""
+      occupation: "",
+      formSubmit: false,
     };
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     if (this.state.name !== "") {
       this.props.addUser(this.state);
       this.setState({
         name: "",
         age: "",
-        occupation: ""
+        occupation: "",
+        formSubmit: true,
       });
-      window.location.href = "/animals";
     } else {
       alert("Don't forget to add your name!");
     }
   };
   render() {
-    const { name, age, occupation } = this.state;
+    const { name, age, occupation, formSubmit } = this.state;
     const { handleChange, handleSubmit } = this;
-
+    if (formSubmit) {
+      return <Redirect to='/animals' />;
+    }
     return (
       <div className='score-form-background'>
         <h1 className='form-header'>Please enter your details: </h1>
