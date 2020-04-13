@@ -6,7 +6,6 @@ import { addScore } from "../actions/userActions.js";
 import AnimalCard from "../components/animals/AnimalCard";
 import { Card, Container, Button, Icon } from "semantic-ui-react";
 import "../css/AnimalContainer.css";
-import NewButton from "../components/NewButton";
 
 class AnimalContainer extends Component {
   constructor() {
@@ -117,7 +116,15 @@ class AnimalContainer extends Component {
         <b>Timer: {this.state.time} </b>
 
         <br />
-        <NewButton />
+        <Button
+          onClick={() => {
+            window.location.reload();
+          }}
+          color='red'
+          className='new-button'
+        >
+          Restart
+        </Button>
       </div>
     );
   };
