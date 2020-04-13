@@ -12,7 +12,7 @@ class AnimalContainer extends Component {
   constructor() {
     super();
     this.state = {
-      time: 0,
+      time: 0
     };
   }
   componentDidMount() {
@@ -27,34 +27,36 @@ class AnimalContainer extends Component {
   // =================================================showlists=================================================================
   showGoals = () => {
     if (this.props.goals.length > 0) {
-      return this.props.goals.map((goal) => <li>{goal.name}</li>);
+      return this.props.goals.map(goal => <li>{goal.name}</li>);
     }
   };
 
   matchThree = () => {
     if (this.props.animals.length > 0 && this.props.goals.length > 0) {
       const saved = this.props.animals.filter(
-        (animal) => animal.status === "Wild"
+        animal => animal.status === "Wild"
       );
       const savedNames = [];
       const goalNames = [];
-      saved.map((savedAnimal) => savedNames.push(savedAnimal.name));
+      let success = [];
+      saved.map(savedAnimal => savedNames.push(savedAnimal.name));
 
-      this.props.goals.map((goal) => goalNames.push(goal.name));
+      this.props.goals.map(goal => goalNames.push(goal.name));
       if (saved.length === 3) {
         let sortedA = savedNames.sort();
         let sortedB = goalNames.sort();
-        let success = [];
-        for (let i = 0; i < sortedA.length; i++) {
-          if (sortedA[i] !== sortedB[i]) {
-            success.push(0);
-          } else {
+        for (var i = 0; i < sortedA.length; ++i) {
+          if (sortedA[i] === sortedB[i]) {
             success.push(1);
-            this.stopClock();
-            this.props.addScore(this.state.time);
+          } else {
+            success.push(0);
           }
         }
-        return success.every((currentValue) => currentValue) ? (
+        if (success.every(val => val === 1)) {
+          this.stopClock();
+          this.props.addScore(this.state.time);
+        }
+        return success.every(val => val === 1) ? (
           <div className='game-over-alert'>
             <div className='game-over-alert-text'>
               <Icon name='check circle outline' size='large' color='green'>
@@ -133,8 +135,8 @@ class AnimalContainer extends Component {
   }
 
   startClock = () => {
-    this.setState((prevState) => ({
-      time: prevState.time + 1,
+    this.setState(prevState => ({
+      time: prevState.time + 1
     }));
   };
 
@@ -143,15 +145,15 @@ class AnimalContainer extends Component {
   };
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     animals: state.animals,
-    goals: state.goals,
+    goals: state.goals
   };
 };
 
 export default connect(mapStateToProps, {
   fetchAnimals,
   fetchGoals,
-  addScore,
+  addScore
 })(AnimalContainer);

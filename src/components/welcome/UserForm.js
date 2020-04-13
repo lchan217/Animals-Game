@@ -12,15 +12,15 @@ class UserForm extends React.Component {
       name: "",
       age: "",
       occupation: "",
-      formSubmit: false,
+      formSubmit: false
     };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     if (this.state.name !== "") {
       this.props.addUser(this.state);
@@ -28,7 +28,7 @@ class UserForm extends React.Component {
         name: "",
         age: "",
         occupation: "",
-        formSubmit: true,
+        formSubmit: true
       });
     } else {
       alert("Don't forget to add your name!");
