@@ -1,18 +1,20 @@
-.high-scores-wrapper {
-  padding: 1.5em;
+.score-list-container {
+  padding-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.high-scores-background {
-  font-size: 1.5em;
-  width: 100%;
-  height: 800px;
-  padding: 40px;
-  background-image: url("https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
-  background-size: cover;
+.score-list-wrapper {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRliOlQSyEyIfRYfq1T97haw-ylU41zrg7bRGlkKEgDlCeUUJ-q");
 }
 
-@media screen and (max-width: 590px) {
-  .high-scores-background {
-    font-size: 1.2em;
-  }
+.score-header {
+  font-size: 3em;
+  text-align: center;
+  color: white;
+}
+
+.new-game-scores {
+  text-align: center;
 }

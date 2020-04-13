@@ -2,24 +2,23 @@
   width: 90% !important;
 }
 
+.timer {
+  padding-top: 4em;
+}
+
 .game-over-alert {
   /* placement of box*/
   left: 30%;
-  right: 30%;
   bottom: auto;
+  z-index: 1;
+  position: fixed;
+  top: 20%;
+  right: 0;
 
+  /* appearance of box */
   background: rgb(223, 223, 223);
   padding: 4em;
-  width: 45%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  /* position: relative; */
-  z-index: 1;
-  position: sticky;
-  top: 4em;
+  width: 30%;
 }
 
 i.green.check.circle.outline.large.icon {
@@ -31,10 +30,6 @@ i.green.check.circle.outline.large.icon {
   color: rgb(203, 59, 51);
   align-self: center;
 }
-.alert-new-game {
-  width: 14em;
-  align-self: center;
-}
 
 button.ui.red.button.alert-to-scores {
   margin-left: 30%;
@@ -42,15 +37,8 @@ button.ui.red.button.alert-to-scores {
 }
 
 @media screen and (max-width: 400px) {
-  .alert-new-game {
-    width: 6em;
-  }
   .game-over-alert-text {
-    font-size: 1em;
-  }
-
-  .success-paragraph {
-    padding-top: 10em;
+    font-size: 1.4em;
   }
 
   .game-over-alert {
@@ -58,5 +46,11 @@ button.ui.red.button.alert-to-scores {
     right: 20%;
     bottom: auto;
     padding: 1.5em;
+    width: 12em;
+  }
+
+  button.ui.red.button.alert-to-scores {
+    margin-top: 6em;
+    margin-left: 10%;
   }
 }

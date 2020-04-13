@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { addUser } from "../../actions/userActions.js";
 import { Form, Button } from "semantic-ui-react";
 import "../../css/UserForm.css";
@@ -11,7 +12,7 @@ class UserForm extends React.Component {
       name: "",
       age: "",
       occupation: "",
-      score: ""
+      formSubmit: false
     };
   }
 
@@ -21,18 +22,24 @@ class UserForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.addUser(this.state);
-    this.setState({
-      name: "",
-      age: "",
-      occupation: "",
-      score: ""
-    });
+    if (this.state.name !== "") {
+      this.props.addUser(this.state);
+      this.setState({
+        name: "",
+        age: "",
+        occupation: "",
+        formSubmit: true
+      });
+    } else {
+      alert("Don't forget to add your name!");
+    }
   };
   render() {
-    const { name, age, occupation, score } = this.state;
+    const { name, age, occupation, formSubmit } = this.state;
     const { handleChange, handleSubmit } = this;
-
+    if (formSubmit) {
+      return <Redirect to='/animals' />;
+    }
     return (
       <div className='score-form-background'>
         <h1 className='form-header'>Please enter your details: </h1>
@@ -49,9 +56,6 @@ class UserForm extends React.Component {
               placeholder='Occupation'
               name='occupation'
             />
-          </Form.Input>
-          <Form.Input value={score} onChange={handleChange}>
-            <input className='score-input' placeholder='Score' name='score' />
           </Form.Input>
           <Button type='submit'>Submit</Button>
         </Form>

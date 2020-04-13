@@ -1,0 +1,30 @@
+.score-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 30%;
+  margin: 1em;
+  padding: 1em;
+  background-color: white;
+  align-self: center;
+}
+
+.score-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  -ms-transform: scale(1); /* IE 9 */
+  -webkit-transform: scale(1); /* Safari 3-8 */
+  transform: scale(1);
+}
+
+.score-content {
+  font-size: 1.5em;
+}
+
+.score-date {
+  padding-top: 0.5em;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 400px) {
+  .score-card {
+    width: 60%;
+  }
+}

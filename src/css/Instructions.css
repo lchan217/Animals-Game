@@ -15,10 +15,8 @@
   text-align: center;
 }
 
-.new-game-button {
-  width: 20%;
-  margin-left: 35% !important;
-  margin-right: 35% !important;
+.intro-button {
+  text-align: center;
 }
 
 @media screen and (max-width: 400px) {

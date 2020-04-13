@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchUsers } from "../actions/userActions.js";
 // import HighScores from "../components/welcome/HighScores";
-import UserCard from "../components/welcome/UserCard";
-import { Card } from "semantic-ui-react";
+import ScoreList from "../components/welcome/ScoreList";
 import "../css/UserContainer.css";
+import NewButton from "../components/NewButton.js";
 
 class UserContainer extends Component {
   componentDidMount() {
@@ -29,15 +29,18 @@ class UserContainer extends Component {
     //   );
     // }
     if (this.props.users.length > 0) {
-      this.props.users.sort((a, b) => a.name.localeCompare(b.name));
+      this.props.users.sort((a, b) => a.score - b.score);
       return (
-        <div>
-          <h2>User Cards</h2>
-          <Card.Group itemsPerRow={5}>
+        <div className='score-list-wrapper'>
+          <div className='score-list-container'>
+            <h1 className='score-header'>User Scores</h1>
+            <div className='new-game-scores'>
+              <NewButton />
+            </div>
             {this.props.users.map((user, index) => (
-              <UserCard key={index} {...user} />
+              <ScoreList key={index} {...user} rank={index} />
             ))}
-          </Card.Group>
+          </div>
         </div>
       );
     }

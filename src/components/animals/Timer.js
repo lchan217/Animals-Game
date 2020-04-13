@@ -2,6 +2,8 @@ import React from "react";
 import "../../css/Timer.css";
 import { Button } from "semantic-ui-react";
 
+// put this code in AnimalContainer, because when timer stopped it would need to associate score with last user
+
 class Timer extends React.Component {
   constructor() {
     super();

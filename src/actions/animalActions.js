@@ -1,9 +1,12 @@
 export const fetchAnimals = () => {
   return dispatch => {
     dispatch({ type: "LOADING_ANIMALS" });
-    return fetch("https://animals-game-api.herokuapp.com/api/animals")
-      .then(response => response.json())
-      .then(animals => dispatch({ type: "FETCH_ANIMALS", payload: animals }));
+    return (
+      fetch("https://animals-game-api.herokuapp.com/api/animals")
+        // return fetch("http://localhost:3001/api/animals")
+        .then(response => response.json())
+        .then(animals => dispatch({ type: "FETCH_ANIMALS", payload: animals }))
+    );
   };
 };
 

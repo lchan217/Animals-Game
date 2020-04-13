@@ -2,15 +2,26 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAnimals } from "../actions/animalActions.js";
 import { fetchGoals } from "../actions/goalActions.js";
+import { addScore } from "../actions/userActions.js";
 import AnimalCard from "../components/animals/AnimalCard";
-import Timer from "../components/animals/Timer";
 import { Card, Container, Button, Icon } from "semantic-ui-react";
 import "../css/AnimalContainer.css";
 
 class AnimalContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      time: 0
+    };
+  }
   componentDidMount() {
     this.props.fetchAnimals();
     this.props.fetchGoals();
+    this.interval = setInterval(this.startClock, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
   // =================================================showlists=================================================================
   showGoals = () => {
@@ -26,22 +37,25 @@ class AnimalContainer extends Component {
       );
       const savedNames = [];
       const goalNames = [];
+      let success = [];
       saved.map(savedAnimal => savedNames.push(savedAnimal.name));
 
       this.props.goals.map(goal => goalNames.push(goal.name));
-
       if (saved.length === 3) {
         let sortedA = savedNames.sort();
         let sortedB = goalNames.sort();
-        let success = [];
-        for (let i = 0; i < sortedA.length; i++) {
-          if (sortedA[i] !== sortedB[i]) {
-            success.push(0);
-          } else {
+        for (var i = 0; i < sortedA.length; ++i) {
+          if (sortedA[i] === sortedB[i]) {
             success.push(1);
+          } else {
+            success.push(0);
           }
         }
-        return success.every(currentValue => currentValue) ? (
+        if (success.every(val => val === 1)) {
+          this.stopClock();
+          this.props.addScore(this.state.time);
+        }
+        return success.every(val => val === 1) ? (
           <div className='game-over-alert'>
             <div className='game-over-alert-text'>
               <Icon name='check circle outline' size='large' color='green'>
@@ -71,8 +85,7 @@ class AnimalContainer extends Component {
                 window.location.reload();
               }}
               color='red'
-              size='mini'
-              className='alert-new-game'
+              className='new-button'
             >
               New Game
             </Button>
@@ -97,10 +110,29 @@ class AnimalContainer extends Component {
     }
   };
 
+  showTimer = () => {
+    return (
+      <div className='timer'>
+        <b>Timer: {this.state.time} </b>
+
+        <br />
+        <Button
+          onClick={() => {
+            window.location.reload();
+          }}
+          color='red'
+          className='new-button'
+        >
+          Restart
+        </Button>
+      </div>
+    );
+  };
+
   render() {
     return (
       <Container className='animal-container'>
-        <Timer />
+        {this.showTimer()}
         <h4>Capture, nurse, and release these animals in order to win!</h4>
         <ol>{this.showGoals()}</ol>
         {this.matchThree()}
@@ -108,6 +140,16 @@ class AnimalContainer extends Component {
       </Container>
     );
   }
+
+  startClock = () => {
+    this.setState(prevState => ({
+      time: prevState.time + 1
+    }));
+  };
+
+  stopClock = () => {
+    clearInterval(this.interval);
+  };
 }
 
 const mapStateToProps = state => {
@@ -117,6 +159,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchAnimals, fetchGoals })(
-  AnimalContainer
-);
+export default connect(mapStateToProps, {
+  fetchAnimals,
+  fetchGoals,
+  addScore
+})(AnimalContainer);
